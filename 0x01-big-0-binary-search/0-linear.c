@@ -1,5 +1,14 @@
 #include "search_algos.h"
 
+/**
+ * linear_search - Linear search example
+ * @array: an array of integers
+ * @size: the size of the array
+ * @value: the value to be searched
+ *
+ * Return: On Success: the index where the value was found
+ * On error: It returns -1
+ */
 int linear_search(int *array, size_t size, int value)
 {
 	int i;
