@@ -24,6 +24,8 @@ System programming & Algorithm ― Data structures and Algorithms
 
 ### Task 10 - [Big O #10](BO-10)
 
-### Task 11 - [Big O #11](BO-11)
+### Task 11 - [Big O #Singly linked lists](BO-11)
 
-### Task 12 - [Big O #12](BO-12)
+### Task 12 - [Big O #Doubly linked lists](BO-12)
+
+### Task 13 - [Big O #Hash tables](BO-15)
