@@ -31,6 +31,20 @@ void f(int n)
 
 ### Task  2 - [Big O #2](BO-2)
 
+Time complexity of the function/algorithm:
+
+```c
+void f(int n)
+{
+    int i;
+
+    for (i = 0; i < n; i += 98)
+    {
+        printf("[%d]\n", i);
+    }
+}
+```
+
 ### Task  3 - [Big O #3](BO-3)
 
 ### Task  4 - [Big O #4](BO-4)
