@@ -28,10 +28,14 @@ System programming & Algorithm ― Data structures and Algorithms
 
 ### Task 12 - [Big O #Doubly linked lists](BO-12)
 
-### Task 13 - [Big O #Hash tables](BO-15)
+### Task 13 - [Big O #Stacks](BO-13)
 
-### Task 14 - [Big O #16](BO-16)
+### Task 14 - [Big O #Queues](BO-14)
 
-### Task 15 - [Linear search](0-linear.c)
+### Task 15 - [Big O #Hash tables](BO-15)
 
-### Task 16 - [Binary search](1-binary.c)
+### Task 16 - [Big O #16](BO-16)
+
+### Task 17 - [Linear search](0-linear.c)
+
+### Task 18 - [Binary search](1-binary.c)
