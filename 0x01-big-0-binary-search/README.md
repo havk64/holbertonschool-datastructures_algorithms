@@ -211,6 +211,12 @@ Time complexities of the operations on a doubly linked list:
 
 ### Task 13 - [Big O #Stacks](BO-13)
 
+Time complexities of the operations on a stack:
+
+- push
+- pop
+- Searching for an element in a stack of size n
+
 ### Task 14 - [Big O #Queues](BO-14)
 
 ### Task 15 - [Big O #Hash tables](BO-15)
