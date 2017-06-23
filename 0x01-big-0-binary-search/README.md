@@ -151,6 +151,24 @@ int Fibonacci(int number)
 
 ### Task  9 - [Big O #9](BO-9)
 
+Time complexity of the function/algorithm:
+
+```python
+def func(n):
+    a=5
+    b=6
+    c=10
+    for i in range(n):
+        for j in range(n):
+            x = i * i
+            y = j * j
+            z = i * j
+    for k in range(n):
+        w = a*k + 45
+        v = b*b
+    d = 33
+```
+
 ### Task 10 - [Big O #10](BO-10)
 
 ### Task 11 - [Big O #Singly linked lists](BO-11)
