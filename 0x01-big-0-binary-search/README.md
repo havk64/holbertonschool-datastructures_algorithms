@@ -108,6 +108,34 @@ void f(unsigned int n)
 
 ### Task  7 - [Big O #7](BO-7)
 
+Time complexity of the function/algorithm:
+
+```c
+void f(int n)
+{
+    int i;
+    int j;
+
+    for (i = 0; i < n; i++)
+    {
+        if (i % 2 == 0)
+        {
+            for (j = 1; j < n; j = j * 2)
+            {
+                printf("[%d] [%d]\n", i, j);
+            }
+        }
+        else
+        {
+            for (j = 0; j < n; j = j + 2)
+            {
+                printf("[%d] [%d]\n", i, j);
+            }
+        }
+    }
+}
+```
+
 ### Task  8 - [Big O #8](BO-8)
 
 ### Task  9 - [Big O #9](BO-9)
