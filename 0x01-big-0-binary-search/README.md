@@ -77,6 +77,15 @@ var factorial = function(n) {
 
 ### Task  5 - [Big O #5](BO-5)
 
+Time complexity of the function/algorithm:
+
+```php
+foreach($numbers as $number)
+{
+    echo $number;
+}
+```
+
 ### Task  6 - [Big O #6](BO-6)
 
 ### Task  7 - [Big O #7](BO-7)
