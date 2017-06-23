@@ -256,4 +256,14 @@ int **allocate_map(int n, int m)
 
 ### Task 17 - [Linear search](0-linear.c)
 
+A function that searches for a value in an array of integers using the Linear search algorithm
+
+- Prototype : `int linear_search(int *array, size_t size, int value);`
+- `array` is a pointer to the first element of the array to search in
+- `size` is the number of elements in array
+- `value` is the value to search for
+- The function returns the first index where then value is located
+- If value is not present in array or if array is NULL, it returns -1
+- Every time the value in the array is compared to the value being searched, the value is printed
+
 ### Task 18 - [Binary search](1-binary.c)
