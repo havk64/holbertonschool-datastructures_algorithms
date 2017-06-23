@@ -138,6 +138,17 @@ void f(int n)
 
 ### Task  8 - [Big O #8](BO-8)
 
+Time complexity of the function/algorithm:
+
+```c
+int Fibonacci(int number)
+{
+    if (number <= 1) return number;
+
+    return Fibonacci(number - 2) + Fibonacci(number - 1);
+}
+```
+
 ### Task  9 - [Big O #9](BO-9)
 
 ### Task 10 - [Big O #10](BO-10)
