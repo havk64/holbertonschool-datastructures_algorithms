@@ -15,6 +15,8 @@ void f(int n)
 
 ### Task  1 - [Big O #1](BO-1)
 
+Time complexity of the function/algorithm:
+
 ```c
 void f(int n)
 {
