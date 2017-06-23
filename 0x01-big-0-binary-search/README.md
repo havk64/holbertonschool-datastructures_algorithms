@@ -227,6 +227,15 @@ The time complexities of those operations on a queue:
 
 ### Task 15 - [Big O #Hash tables](BO-15)
 
+The time complexities of operations on a hash table with the implementation used on the Hash Table C project (chaining):
+
+- Searching for an element, best case
+- Searching for an element, worst case
+- Insertion, best case
+- Insertion, worst case
+- Deletion, best case
+- Deletion, worst case
+
 ### Task 16 - [Big O #16](BO-16)
 
 ### Task 17 - [Linear search](0-linear.c)
