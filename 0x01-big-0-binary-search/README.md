@@ -219,6 +219,12 @@ Time complexities of the operations on a stack:
 
 ### Task 14 - [Big O #Queues](BO-14)
 
+The time complexities of those operations on a queue:
+
+- push
+- pop
+- Searching for an element in a queue of size n
+
 ### Task 15 - [Big O #Hash tables](BO-15)
 
 ### Task 16 - [Big O #16](BO-16)
