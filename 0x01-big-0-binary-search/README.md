@@ -191,6 +191,14 @@ void f(int n)
 
 ### Task 11 - [Big O #Singly linked lists](BO-11)
 
+Time complexities of those operations on a singly linked list:
+
+- Accessing the nth element
+- Inserting after the nth element (Considering you have a pointer to the node to insert)
+- Removing the nth element (Considering you have a pointer to the node to remove)
+- Searching for an element in a linked list of size n
+- Setting the value of the nth element (Considering you have a pointer to the node to set the value of)
+
 ### Task 12 - [Big O #Doubly linked lists](BO-12)
 
 ### Task 13 - [Big O #Stacks](BO-13)
