@@ -88,6 +88,24 @@ foreach($numbers as $number)
 
 ### Task  6 - [Big O #6](BO-6)
 
+Time complexity of the function/algorithm:
+
+```c
+void f(unsigned int n)
+{
+    int i;
+    int j;
+
+    for (i = 0; i < n; i++)
+    {
+        for (j = 1; j < n; j = j * 2)
+        {
+            printf("[%d] [%d]\n", i, j);
+        }
+    }
+}
+```
+
 ### Task  7 - [Big O #7](BO-7)
 
 ### Task  8 - [Big O #8](BO-8)
