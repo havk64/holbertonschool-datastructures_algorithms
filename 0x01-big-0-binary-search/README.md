@@ -63,6 +63,18 @@ void f(unsigned int n)
 
 ### Task  4 - [Big O #4](BO-4)
 
+Time complexity of the function/algorithm:
+
+```c
+var factorial = function(n) {
+    if(n == 0) {
+        return 1
+    } else {
+        return n * factorial(n - 1);
+    }
+}
+```
+
 ### Task  5 - [Big O #5](BO-5)
 
 ### Task  6 - [Big O #6](BO-6)
