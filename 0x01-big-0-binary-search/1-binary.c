@@ -2,7 +2,7 @@
 
 /**
  * print - print info about the array on each iteration
- * @array: the arrai of integers
+ * @array: the array of integers
  * @start: the start index
  * @end: the end index
  *
