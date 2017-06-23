@@ -4,7 +4,28 @@ System programming & Algorithm ― Data structures and Algorithms
 
 ### Task  0 - [Big O #0](BO-0)
 
+Time complexity of the function:
+
+```C
+void f(int n)
+{
+    printf("n = %d\n", n);
+}
+```
+
 ### Task  1 - [Big O #1](BO-1)
+
+```c
+void f(int n)
+{
+    int i;
+
+    for (i = 0; i < n; i++)
+    {
+        printf("[%d]\n", i);
+    }
+}
+```
 
 ### Task  2 - [Big O #2](BO-2)
 
