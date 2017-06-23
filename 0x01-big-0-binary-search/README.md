@@ -31,3 +31,7 @@ System programming & Algorithm ― Data structures and Algorithms
 ### Task 13 - [Big O #Hash tables](BO-15)
 
 ### Task 14 - [Big O #16](BO-16)
+
+### Task 15 - [Linear search](0-linear.c)
+
+### Task 16 - [Binary search](1-binary.c)
