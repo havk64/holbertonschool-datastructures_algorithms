@@ -171,6 +171,24 @@ def func(n):
 
 ### Task 10 - [Big O #10](BO-10)
 
+Time complexity of the function/algorithm:
+
+```c
+void f(int n)
+{
+     int i;
+     int j;
+
+     for (i = 0; i < n; i++)
+     {
+          for (j = i + 1; j < n; j++)
+          {
+               printf("[%d] [%d]\n", i, j);
+          }
+     }
+}
+```
+
 ### Task 11 - [Big O #Singly linked lists](BO-11)
 
 ### Task 12 - [Big O #Doubly linked lists](BO-12)
