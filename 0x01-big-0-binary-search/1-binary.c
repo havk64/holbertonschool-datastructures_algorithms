@@ -37,12 +37,12 @@ int binary_search(int *array, size_t size, int value)
 	{
 		print(array, start, end);
 		m = (start + end) / 2;
-		if (array[m] == value)
-			return (m);
+		if (array[m] > value)
+			end = m - 1;
 		else if (array[m] < value)
 			start = m + 1;
 		else
-			end = m - 1;
+			return (m);
 	}
 	return (-1);
 }
