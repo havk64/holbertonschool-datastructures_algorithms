@@ -1,9 +1,9 @@
 CC	:= gcc
 CFLAGS	:= -g -Wall -Wextra -Werror -pedantic
+SRC	:= 100-jump.c 100-main.c
 BIN	:= jump
 
-$(BIN): 100-jump.c
-	$(CC) $(CFLAGS) -o $@ $<
+$(BIN): $(SRC)
 	$(CC) $(CFLAGS) -o $@ $^ -lm
 
 clean:
