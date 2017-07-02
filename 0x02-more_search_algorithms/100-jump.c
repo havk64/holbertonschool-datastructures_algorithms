@@ -1,5 +1,12 @@
 #include "search_algos.h"
 
+/**
+ * min = find the smaller number
+ * @a: first item
+ * @b: second item
+ *
+ * Return: the small number
+ */
 size_t min(size_t a, size_t b)
 {
 	return ((a > b) ? b : a);
