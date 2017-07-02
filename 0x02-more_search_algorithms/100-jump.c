@@ -5,6 +5,11 @@ size_t min(size_t a, size_t b)
 	return ((a > b) ? b : a);
 }
 
+void print(int a, int b)
+{
+	printf("Value checked array[%d] = [%d]\n", a, b);
+}
+
 int jump_search(int *array, size_t size, int value)
 {
 	size_t a, b;
