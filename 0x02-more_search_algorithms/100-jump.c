@@ -49,7 +49,7 @@ int jump_search(int *array, size_t size, int value)
 		print(a, array[a]);
 	}
 
-	printf("Between [%lu] and [%lu]\n", a, b);
+	printf("Value found between [%lu] and [%lu]\n", a, b);
 	while (array[a] < value)
 	{
 		print(a, array[a]);
