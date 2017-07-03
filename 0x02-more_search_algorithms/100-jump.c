@@ -39,23 +39,30 @@ int jump_search(int *array, size_t size, int value)
 
 	a = 0;
 	b = (size_t)sqrt(size);
+	print(a, array[a]);
 	while (array[min(b, size) - 1] < value)
 	{
 		a = b;
 		b += sqrt(size);
 		if (a >= size)
 			return (-1);
+		print(a, array[a]);
 	}
 
+	printf("Between [%lu] and [%lu]\n", a, b);
 	while (array[a] < value)
 	{
+		print(a, array[a]);
 		a++;
 		if (a == min(b, size))
 			return (-1);
 	}
 
 	if (array[a] == value)
+	{
+		print(a, array[a]);
 		return (a);
-	else
+	} else
 		return (-1);
 }
+
