@@ -18,9 +18,9 @@ size_t min(size_t a, size_t b)
  *
  * Return: void
  */
-void print(size_t a)
+void print(size_t a, int b)
 {
-	printf("Value checked array[%lu] = [%lu]\n", a, a);
+	printf("Value checked array[%lu] = [%d]\n", a, b);
 }
 
 /**
