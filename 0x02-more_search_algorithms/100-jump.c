@@ -12,9 +12,15 @@ size_t min(size_t a, size_t b)
 	return ((a > b) ? b : a);
 }
 
-void print(int a, int b)
+/**
+ * print - print the numbers being compared
+ * @a: index
+ *
+ * Return: void
+ */
+void print(size_t a)
 {
-	printf("Value checked array[%d] = [%d]\n", a, b);
+	printf("Value checked array[%lu] = [%lu]\n", a, a);
 }
 
 /**
