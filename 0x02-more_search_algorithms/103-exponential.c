@@ -1,6 +1,24 @@
 #include "search_algos.h"
 
 /**
+ * print_array - print info about the array on each iteration
+ * @array: the array of integers
+ * @start: the start index
+ * @end: the end index
+ *
+ * Return: Always void
+ */
+void print_array(int *array, int start, int end)
+{
+	int i;
+
+	printf("Searching in array: ");
+	for (i = start; i < end; i++)
+		printf("%d, ", array[i]);
+	printf("%d\n", array[i]);
+}
+
+/**
  * min = find the smaller number
  * @a: first item
  * @b: second item
