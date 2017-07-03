@@ -1,12 +1,19 @@
 CC	:= gcc
 CFLAGS	:= -g -Wall -Wextra -Werror -pedantic
-SRC	:= 100-jump.c 100-main.c
-BIN	:= jump
+SRCJ	:= 100-jump.c 100-main.c
+SRCI	:= 102-interpolation.c 102-main.c
+JUMP	:= jump
+INTER	:= inter
 
-$(BIN): $(SRC)
+all: $(JUMP) $(INTER)
+
+$(JUMP): $(SRCJ)
 	$(CC) $(CFLAGS) -o $@ $^ -lm
 
-clean:
-	$(RM) $(BIN)
+$(INTER): $(SRCI)
+	$(CC) $(CFLAGS) -o $@ $^
 
-re: clean $(BIN)
+clean:
+	$(RM) $(JUMP) $(INTER)
+
+re: clean all
