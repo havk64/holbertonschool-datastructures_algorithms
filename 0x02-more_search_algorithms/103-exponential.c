@@ -19,7 +19,7 @@ void print_array(int *array, int start, int end)
 }
 
 /**
- * min = find the smaller number
+ * min - find the smaller number
  * @a: first item
  * @b: second item
  *
