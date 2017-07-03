@@ -1,7 +1,7 @@
 #include "search_algos.h"
 
 /**
- * min = find the smaller number
+ * min - find the smaller number
  * @a: first item
  * @b: second item
  *
