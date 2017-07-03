@@ -54,15 +54,12 @@ int exponential_search(int *array, size_t size, int value)
 	int bound;
 
 	if (size == 0)
-	{
 		return (-1);
-	}
 
 	bound = 1;
 	while (bound < (int)size && array[bound] < value)
-	{
 		bound *= 2;
-	}
+
 	bound /= 2;
 
 	return (binary_search(array, bound, size, value));
