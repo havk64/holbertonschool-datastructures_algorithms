@@ -16,10 +16,10 @@ $(T0): 0-main.o $(OBJS)
 $(T1): 1-main.o 1-binary_tree_insert_left.o $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
 
-$(T2): 2-main.c 2-binary_tree_insert_right.o $(OBJS)
+$(T2): 2-main.o 2-binary_tree_insert_right.o $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
 
-$(T3): 3-main.c 2-binary_tree_insert_right.o $(OBJS)
+$(T3): 3-main.o 2-binary_tree_insert_right.o $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
 
 clean:
