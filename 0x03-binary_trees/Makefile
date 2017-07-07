@@ -1,6 +1,6 @@
 CC	:= gcc
 CFLAGS	:= -g -Wall -Wextra -Werror -pedantic
-SRC	:= 0-binary_tree_node.c binary_tree_print.c free_tree.c
+SRC	:= 0-binary_tree_node.c binary_tree_print.c 3-binary_tree_delete.c
 OBJS	:= $(SRC:.c=.o)
 ALLOBJ	:= $(wildcard *.o)
 T0	:= 0-node
