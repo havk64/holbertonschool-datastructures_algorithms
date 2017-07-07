@@ -27,7 +27,7 @@ $(T3): 3-main.o 2-binary_tree_insert_right.o $(OBJS)
 $(T4): 4-main.o 4-binary_tree_is_leaf.o 2-binary_tree_insert_right.o $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
 
-$(T5): 5-main.o 5-binary_tree_is_root.o $(OBJS)
+$(T5): 5-main.o 5-binary_tree_is_root.o 2-binary_tree_insert_right.o $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
 
 clean:
