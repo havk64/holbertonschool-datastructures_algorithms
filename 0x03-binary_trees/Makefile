@@ -1,13 +1,20 @@
 CC	:= gcc
 CFLAGS	:= -g -Wall -Wextra -Werror -pedantic
-SRC	:= 0-main.c 0-binary_tree_node.c binary_tree_print.c
+SRC	:= binary_tree_print.c
 OBJS	:= $(SRC:.c=.o)
-BIN	:= 0-node
+OBJ	:= $(wildcard *.o)
+T0	:= 0-node
+T1	:= 1-node
 
-$(BIN): $(OBJS)
+all: $(T0) $(T1)
+
+$(T0): 0-main.o 0-binary_tree_node.o $(OBJS)
+	$(CC) $(CFLAGS) -o $@ $^
+
+$(T1): 1-main.o 1-binary_tree_insert_left.o $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJ) $(OBJS)
 
-re: clean $(BIN)
+re: clean all
