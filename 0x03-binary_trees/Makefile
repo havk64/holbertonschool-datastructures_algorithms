@@ -6,8 +6,9 @@ ALLOBJ	:= $(wildcard *.o)
 T0	:= 0-node
 T1	:= 1-node
 T2	:= 2-node
+T3	:= 3-del
 
-all: $(T0) $(T1) $(T2)
+all: $(T0) $(T1) $(T2) $(T3)
 
 $(T0): 0-main.o $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
@@ -16,6 +17,9 @@ $(T1): 1-main.o 1-binary_tree_insert_left.o $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
 
 $(T2): 2-main.c 2-binary_tree_insert_right.o $(OBJS)
+	$(CC) $(CFLAGS) -o $@ $^
+
+$(T3): 3-main.c 2-binary_tree_insert_right.o $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
 
 clean:
