@@ -2,7 +2,7 @@ CC	:= gcc
 CFLAGS	:= -g -Wall -Wextra -Werror -pedantic
 SRC	:= 0-binary_tree_node.c binary_tree_print.c free_tree.c
 OBJS	:= $(SRC:.c=.o)
-OBJ	:= $(wildcard *.o)
+ALLOBJ	:= $(wildcard *.o)
 T0	:= 0-node
 T1	:= 1-node
 
@@ -15,6 +15,6 @@ $(T1): 1-main.o 1-binary_tree_insert_left.o $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
 
 clean:
-	$(RM) $(OBJ) $(OBJS)
+	$(RM) $(ALLOBJ) $(OBJS)
 
 re: clean all
