@@ -9,8 +9,9 @@ T2	:= 2-node
 T3	:= 3-del
 T4	:= 4-leaf
 T5	:= 5-root
+T6	:= 6-pre
 
-all: $(T0) $(T1) $(T2) $(T3) $(T4) $(T5)
+all: $(T0) $(T1) $(T2) $(T3) $(T4) $(T5) $(T6)
 
 $(T0): 0-main.o $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
@@ -28,6 +29,9 @@ $(T4): 4-main.o 4-binary_tree_is_leaf.o 2-binary_tree_insert_right.o $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
 
 $(T5): 5-main.o 5-binary_tree_is_root.o 2-binary_tree_insert_right.o $(OBJS)
+	$(CC) $(CFLAGS) -o $@ $^
+
+$(T6): 6-binary_tree_preorder.o 6-main.o $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
 
 clean:
