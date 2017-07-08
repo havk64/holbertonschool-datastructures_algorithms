@@ -11,8 +11,9 @@ T4	:= 4-leaf
 T5	:= 5-root
 T6	:= 6-pre
 T7	:= 7-in
+T8	:= 8-post
 
-all: $(T0) $(T1) $(T2) $(T3) $(T4) $(T5) $(T6) $(T7)
+all: $(T0) $(T1) $(T2) $(T3) $(T4) $(T5) $(T6) $(T7) $(T8)
 
 $(T0): 0-main.o $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
@@ -36,6 +37,9 @@ $(T6): 6-binary_tree_preorder.o 6-main.o $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
 
 $(T7): 7-binary_tree_inorder.o 7-main.o $(OBJS)
+	$(CC) $(CFLAGS) -o $@ $^
+
+$(T8): 8-binary_tree_postorder.o 8-main.o $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
 
 clean:
