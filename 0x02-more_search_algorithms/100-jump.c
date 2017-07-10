@@ -15,6 +15,7 @@ size_t min(size_t a, size_t b)
 /**
  * print - print the numbers being compared
  * @a: index
+ * @b: value
  *
  * Return: void
  */
