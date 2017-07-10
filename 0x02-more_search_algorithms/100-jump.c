@@ -38,6 +38,9 @@ int jump_search(int *array, size_t size, int value)
 {
 	size_t a, b;
 
+	if (array == NULL)
+		return (-1);
+
 	a = 0;
 	b = (size_t)sqrt(size);
 	print(a, array[a]);
