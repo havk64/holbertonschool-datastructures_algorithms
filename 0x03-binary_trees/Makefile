@@ -13,8 +13,9 @@ T6	:= 6-pre
 T7	:= 7-in
 T8	:= 8-post
 T9	:= 9-height
+T10	:= 10-depth
 
-all: $(T0) $(T1) $(T2) $(T3) $(T4) $(T5) $(T6) $(T7) $(T8) $(T9)
+all: $(T0) $(T1) $(T2) $(T3) $(T4) $(T5) $(T6) $(T7) $(T8) $(T9) $(T10)
 
 $(T0): 0-main.o $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
@@ -44,6 +45,9 @@ $(T8): 8-binary_tree_postorder.o 8-main.o $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
 
 $(T9): 9-binary_tree_height.o 9-main.o 2-binary_tree_insert_right.o $(OBJS)
+	$(CC) $(CFLAGS) -o $@ $^
+
+$(T10): 10-binary_tree_depth.o 10-main.o 2-binary_tree_insert_right.o $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
 
 clean:
