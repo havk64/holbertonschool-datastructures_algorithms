@@ -17,8 +17,9 @@ T10	:= 10-depth
 T11	:= 11-size
 T12	:= 12-leaves
 T13	:= 13-nodes
+T14	:= 14-balance
 
-all: $(T0) $(T1) $(T2) $(T3) $(T4) $(T5) $(T6) $(T7) $(T8) $(T9) $(T10) $(T11) $(T12) $(T13)
+all: $(T0) $(T1) $(T2) $(T3) $(T4) $(T5) $(T6) $(T7) $(T8) $(T9) $(T10) $(T11) $(T12) $(T13) $(T14)
 
 $(T0): 0-main.o $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
@@ -60,6 +61,9 @@ $(T12): 12-binary_tree_leaves.o 12-main.o 2-binary_tree_insert_right.o $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
 
 $(T13): 13-binary_tree_nodes.o 13-main.o 2-binary_tree_insert_right.o $(OBJS)
+	$(CC) $(CFLAGS) -o $@ $^
+
+$(T14): 14-binary_tree_balance.o 14-main.o 2-binary_tree_insert_right.o 1-binary_tree_insert_left.o $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
 
 clean:
