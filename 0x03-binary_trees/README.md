@@ -21,3 +21,24 @@ is the value to put in the new node
     (006)     (016)     (256)     (512)
     $
 
+### 1. Insert Left
+
+The [1-binary_tree_insert_left.c](1-binary_tree_insert_left.c) file has a
+function that inserts a node as the left-child of another node
+
+- Prototype: `binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value);`
+- Where `parent` is a pointer to the node to insert the left-child in and `value` is the value to store in the new node
+- This function returns a pointer to the created node, or NULL on failure
+- If parent already has a left-child, the new node takes its place, and the old left-child is set as the left-child of the new node.
+
+    $ make
+
+    $ ./1-left
+      .--(098)--.
+    (012)     (402)
+
+           .--(098)-------.
+      .--(054)       .--(402)
+    (012)          (128)
+    $
+
