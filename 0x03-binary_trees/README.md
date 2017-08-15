@@ -112,3 +112,23 @@ that checks if a node is a leaf
         Is 98 a leaf: 0
         Is 128 a leaf: 0
         Is 402 a leaf: 1
+
+### 5. Is Root
+
+The [5-binary_tree_is_root.c](5-binary_tree_is_root.c) file has function that
+checks if a given node is a root
+
+- Prototype: `int binary_tree_is_root(const binary_tree_t *node);`
+- Where `node` is a pointer to the node to check
+- It returns 1 if node is a root, and 0 otherwise
+- If node is NULL, it returns 0
+
+        $ make
+
+		$ ./5-root
+          .-------(098)--.
+        (012)--.       (128)--.
+             (054)          (402)
+        Is 98 a root: 1
+        Is 128 a root: 0
+        Is 402 a root: 0
