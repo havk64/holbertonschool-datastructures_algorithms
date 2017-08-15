@@ -135,7 +135,7 @@ checks if a given node is a root
 
 ### 6. Pre-order traversal
 
-The [6-binary_tree_preorder.c](6-binary_tree_preorder.c) has a function that
+The [6-binary_tree_preorder.c](6-binary_tree_preorder.c) file has a function that
 goes through a binary tree using pre-order traversal
 
 - Prototype: `void binary_tree_preorder(const binary_tree_t *tree, void (*func)(int));`
@@ -180,3 +180,27 @@ is a pointer to a function to call for each node.
         256
         402
         512
+
+### 8. Post-order traversal
+
+The [8-binary_tree_postorder.c](8-binary_tree_postorder.c) file has a function that
+goes through a binary tree using post-order traversal
+
+- Prototype: void binary_tree_postorder(const binary_tree_t *tree, void (*func)(int));
+- Where `tree` is a pointer to the root node of the tree to traverse and func
+is a pointer to a function to call for each node.
+- The value in the node is passed as a parameter to this function.
+
+        $ make
+
+		$ ./8-post
+               .-------(098)-------.
+          .--(012)--.         .--(402)--.
+        (006)     (056)     (256)     (512)
+        6
+        56
+        12
+        256
+        512
+        402
+        98
