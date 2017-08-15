@@ -79,16 +79,36 @@ deletes(deallocate) an entire binary tree from
         ==13264== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
         ==13264== Using Valgrind-3.10.1 and LibVEX; rerun with -h for copyright info
         ==13264== Command: ./3-del
-        ==13264== 
+        ==13264==
           .-------(098)--.
         (012)--.       (128)--.
              (054)          (402)
-        ==13264== 
+        ==13264==
         ==13264== HEAP SUMMARY:
         ==13264==     in use at exit: 0 bytes in 0 blocks
         ==13264==   total heap usage: 9 allocs, 9 frees, 949 bytes allocated
-        ==13264== 
+        ==13264==
         ==13264== All heap blocks were freed -- no leaks are possible
-        ==13264== 
+        ==13264==
         ==13264== For counts of detected and suppressed errors, rerun with: -v
         ==13264== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+### 4. Is Leaf
+
+The [4-binary_tree_is_leaf.c](4-binary_tree_is_leaf.c) file has function that
+that checks if a node is a leaf
+
+- Prototype: `int binary_tree_is_leaf(const binary_tree_t *node);`
+- Where `node` is a pointer to the node to check
+- It returns 1 if node is a leaf, and 0 otherwise
+- If node is NULL, it returns 0
+
+        $ make
+
+		./4-leaf
+          .-------(098)--.
+        (012)--.       (128)--.
+             (054)          (402)
+        Is 98 a leaf: 0
+        Is 128 a leaf: 0
+        Is 402 a leaf: 1
