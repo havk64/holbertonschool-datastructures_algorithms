@@ -13,13 +13,13 @@ is the value to put in the new node
 - When created, a node does not have any child
 - The function returns a pointer to the new node, or NULL on failure
 
-    $ make
+        $ make
 
-    $ ./0-node
-           .-------(098)-------.
-      .--(012)--.         .--(402)--.
-    (006)     (016)     (256)     (512)
-    $
+        $ ./0-node
+               .-------(098)-------.
+          .--(012)--.         .--(402)--.
+        (006)     (016)     (256)     (512)
+        $
 
 ### 1. Insert Left
 
@@ -31,16 +31,16 @@ function that inserts a node as the left-child of another node
 - This function returns a pointer to the created node, or NULL on failure
 - If parent already has a left-child, the new node takes its place, and the old left-child is set as the left-child of the new node.
 
-    $ make
+        $ make
 
-    $ ./1-left
-      .--(098)--.
-    (012)     (402)
+        $ ./1-left
+          .--(098)--.
+        (012)     (402)
 
-           .--(098)-------.
-      .--(054)       .--(402)
-    (012)          (128)
-    $
+               .--(098)-------.
+          .--(054)       .--(402)
+        (012)          (128)
+        $
 
 ### 2. Insert Right
 
@@ -53,13 +53,13 @@ is the value to store in the new node
 - It returns a pointer to the created node, or NULL on failure
 - If parent already has a right-child, the new node takes its place, and the old right-child is set as the right-child of the new node.
 
-    $ make
+        $ make
 
-	$ ./2-right
-    	  .--(098)--.
-    (012)     (402)
+        $ ./2-right
+        	  .--(098)--.
+        (012)     (402)
 
-      .-------(098)--.
-    (012)--.       (128)--.
-         (054)          (402)
-    $
+          .-------(098)--.
+        (012)--.       (128)--.
+             (054)          (402)
+        $
