@@ -63,3 +63,32 @@ is the value to store in the new node
         (012)--.       (128)--.
              (054)          (402)
         $
+
+### 3. Delete
+
+The [3-binary_tree_delete.c](3-binary_tree_delete.c) file has a function that
+deletes(deallocate) an entire binary tree from
+
+- Prototype: `void binary_tree_delete(binary_tree_t *tree);`
+- Where `tree` is a pointer to the root node of the tree to delete
+
+        $ make
+
+		$ valgrind ./3-del
+        ==13264== Memcheck, a memory error detector
+        ==13264== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+        ==13264== Using Valgrind-3.10.1 and LibVEX; rerun with -h for copyright info
+        ==13264== Command: ./3-del
+        ==13264== 
+          .-------(098)--.
+        (012)--.       (128)--.
+             (054)          (402)
+        ==13264== 
+        ==13264== HEAP SUMMARY:
+        ==13264==     in use at exit: 0 bytes in 0 blocks
+        ==13264==   total heap usage: 9 allocs, 9 frees, 949 bytes allocated
+        ==13264== 
+        ==13264== All heap blocks were freed -- no leaks are possible
+        ==13264== 
+        ==13264== For counts of detected and suppressed errors, rerun with: -v
+        ==13264== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
