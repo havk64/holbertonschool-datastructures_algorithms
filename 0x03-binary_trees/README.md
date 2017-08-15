@@ -132,3 +132,27 @@ checks if a given node is a root
         Is 98 a root: 1
         Is 128 a root: 0
         Is 402 a root: 0
+
+### 6. Pre-order traversal
+
+The [6-binary_tree_preorder.c](6-binary_tree_preorder.c) has a function that
+goes through a binary tree using pre-order traversal
+
+- Prototype: `void binary_tree_preorder(const binary_tree_t *tree, void (*func)(int));`
+- Where `tree` is a pointer to the root node of the tree to traverse and `func`
+is a pointer to a function to call for each node.
+- The value in the node is passed as a parameter to this function.
+
+        $ make
+
+		$ ./6-pre
+               .-------(098)-------.
+          .--(012)--.         .--(402)--.
+        (006)     (056)     (256)     (512)
+        98
+        12
+        6
+        56
+        402
+        256
+        512
