@@ -42,3 +42,24 @@ function that inserts a node as the left-child of another node
     (012)          (128)
     $
 
+### 2. Insert Right
+
+The [2-binary_tree_insert_right.c](2-binary_tree_insert_right.c) has a function
+that inserts a node as the right-child of another node
+
+- Prototype: `binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value);`
+- Where parent is a pointer to the node to insert the right-child in and value
+is the value to store in the new node
+- It returns a pointer to the created node, or NULL on failure
+- If parent already has a right-child, the new node takes its place, and the old right-child is set as the right-child of the new node.
+
+    $ make
+
+	$ ./2-right
+    	  .--(098)--.
+    (012)     (402)
+
+      .-------(098)--.
+    (012)--.       (128)--.
+         (054)          (402)
+    $
