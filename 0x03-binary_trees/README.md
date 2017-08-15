@@ -156,3 +156,27 @@ is a pointer to a function to call for each node.
         402
         256
         512
+
+### 7. In-order traversal
+
+The [7-binary_tree_inorder.c](7-binary_tree_inorder.c) file has a function that
+goes through a binary tree using in-order traversal
+
+- Prototype: `void binary_tree_inorder(const binary_tree_t *tree, void (*func)(int));`
+- Where `tree` is a pointer to the root node of the tree to traverse and func
+is a pointer to a function to call for each node.
+- The value in the node is passed as a parameter to this function.
+
+        $ make
+
+		$ ./7-in
+               .-------(098)-------.
+          .--(012)--.         .--(402)--.
+        (006)     (056)     (256)     (512)
+        6
+        12
+        56
+        98
+        256
+        402
+        512
