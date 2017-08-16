@@ -278,3 +278,22 @@ counts the leaves in a binary tree
         Leaves in 98: 2
         Leaves in 128: 1
         Leaves in 54: 1
+
+### 13. Nodes
+
+The [13-binary_tree_nodes.c](13-binary_tree_nodes.c) file has a function that
+counts the nodes with at least 1 child in a binary tree
+
+- Prototype: size_t binary_tree_nodes(const binary_tree_t *tree);
+- Where `tree` is a pointer to the root node of the tree to count the nodes in
+- A NULL pointer is not a node
+
+        $ make
+
+		$ ./13-nodes
+          .-------(098)--.
+        (012)--.       (128)--.
+             (054)          (402)
+        Nodes in 98: 3
+        Nodes in 128: 1
+        Nodes in 54: 0
