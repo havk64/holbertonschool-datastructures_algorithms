@@ -204,3 +204,22 @@ is a pointer to a function to call for each node.
         512
         402
         98
+
+### 9. Height
+
+The file [9-binary_tree_height.c](9-binary_tree_height.c) file has a function that
+measures the height of a binary tree
+
+- Prototype: `size_t binary_tree_height(const binary_tree_t *tree);`
+- Where `tree` is a pointer to the root node of the tree to measure the height of
+- If tree is NULL, it returns 0
+
+        $ make
+
+		$ ./9-height
+          .-------(098)--.
+        (012)--.       (128)--.
+             (054)          (402)
+        Height from 98: 2
+        Height from 128: 1
+        Height from 54: 0
