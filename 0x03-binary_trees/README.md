@@ -260,3 +260,21 @@ measures the size of a binary tree
         Size of 128: 2
         Size of 54: 1
 
+### 12. Leaves
+
+The [12-binary_tree_leaves.c](12-binary_tree_leaves.c) file has a function that
+counts the leaves in a binary tree
+
+- Prototype: size_t binary_tree_leaves(const binary_tree_t *tree);
+- Where `tree` is a pointer to the root node of the tree to count the leaves in
+- A NULL pointer is not a leaf
+
+        $ make
+
+		$ ./12-leaves
+          .-------(098)--.
+        (012)--.       (128)--.
+             (054)          (402)
+        Leaves in 98: 2
+        Leaves in 128: 1
+        Leaves in 54: 1
