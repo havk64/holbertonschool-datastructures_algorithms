@@ -297,3 +297,24 @@ counts the nodes with at least 1 child in a binary tree
         Nodes in 98: 3
         Nodes in 128: 1
         Nodes in 54: 0
+
+### 14. Balance Factor
+
+The [14-binary_tree_balance.c](14-binary_tree_balance.c) file has a function that
+write a function that measures the balance factor of a binary tree
+
+- Prototype: `int binary_tree_balance(const binary_tree_t *tree);`
+- Where `tree` is a pointer to the root node of the tree to measure the balance factor of
+- If tree is NULL it returns 0
+
+        $ make
+
+		$ ./14-balance
+                              .-------(098)--.
+                    .-------(045)--.       (128)--.
+               .--(012)--.       (050)          (402)
+          .--(010)     (054)
+        (008)
+        Balance of 98: +2
+        Balance of 128: -1
+        Balance of 54: +0
