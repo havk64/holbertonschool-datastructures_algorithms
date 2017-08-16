@@ -223,3 +223,22 @@ measures the height of a binary tree
         Height from 98: 2
         Height from 128: 1
         Height from 54: 0
+
+### 10. Depth
+
+The [10-binary_tree_depth.c](10-binary_tree_depth.c) file has a function that
+measures the depth of a node in a binary tree
+
+- Prototype: `size_t binary_tree_depth(const binary_tree_t *tree);`
+- Where `tree` is a pointer to the node to measure the depth of
+- If node is NULL, it returns 0
+
+        $ make
+
+		$ ./10-depth
+          .-------(098)--.
+        (012)--.       (128)--.
+             (054)          (402)
+        Depth of 98: 0
+        Depth of 128: 1
+        Depth of 54: 2
