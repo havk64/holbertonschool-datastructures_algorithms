@@ -318,3 +318,22 @@ write a function that measures the balance factor of a binary tree
         Balance of 98: +2
         Balance of 128: -1
         Balance of 54: +0
+
+### 15. Is Full
+
+The [15-binary_tree_is_full.c](15-binary_tree_is_full.c) file has a function that
+checks if a binary tree is full
+
+- Prototype: `int binary_tree_is_full(const binary_tree_t *tree);`
+- Where `tree` is a pointer to the root node of the tree to check
+- If tree is NULL, your it returns 0
+
+        $ make
+
+		$ ./15-full
+               .-------(098)--.
+          .--(012)--.       (128)--.
+        (010)     (054)          (402)
+        Is 98 full: 0
+        Is 12 full: 1
+        Is 128 full: 0
