@@ -242,3 +242,21 @@ measures the depth of a node in a binary tree
         Depth of 98: 0
         Depth of 128: 1
         Depth of 54: 2
+
+### 11. Size
+The [11-binary_tree_size.c](11-binary_tree_size.c) file has a function that
+measures the size of a binary tree
+
+- Prototype: `size_t binary_tree_size(const binary_tree_t *tree);`
+- Where `tree` is a pointer to the root node of the tree to measure the size of
+
+        $ make
+
+		$ ./11-size
+          .-------(098)--.
+        (012)--.       (128)--.
+             (054)          (402)
+        Size of 98: 5
+        Size of 128: 2
+        Size of 54: 1
+
