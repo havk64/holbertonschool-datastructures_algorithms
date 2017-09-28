@@ -5,9 +5,9 @@ T0	:= heap_create
 
 all: $(T0)
 
-$(T0): $(T0OBJS) heap/heap.h
+$(T0): $(T0OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
 
 .PHONY	: clean
 clean:
-	$(RM) heap/*.o
+	$(RM) $(T0OBJS) $(T0)
