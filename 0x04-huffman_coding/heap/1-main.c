@@ -35,5 +35,7 @@ int main(void)
 	       (void *)node->left->left,
 	       (void *)node->left->right, (void *)node->left->parent);
 
+	free(node->left);
+	free(node);
 	return (EXIT_SUCCESS);
 }
