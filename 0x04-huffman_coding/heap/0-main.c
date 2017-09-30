@@ -36,5 +36,6 @@ int main(void)
 	}
 	printf("Heap size: %lu\n", heap->size);
 	printf("Heap root: %p\n", (void *)heap->root);
+	free(heap);
 	return (EXIT_SUCCESS);
 }
