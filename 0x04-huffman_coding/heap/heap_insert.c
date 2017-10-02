@@ -56,3 +56,27 @@ binary_tree_node_t *insert_end(heap_t *heap,
 	free(position);
 	return (node);
 }
+
+binary_tree_node_t *heap_insert(heap_t *heap, void *data)
+{
+	binary_tree_node_t *node;
+
+	if (heap == NULL || data == NULL)
+		return (NULL);
+
+	if (heap->root == NULL)
+	{
+		node = binary_tree_node(NULL, data);
+		if (node == NULL)
+			return (NULL);
+
+		heap->root = node;
+	}
+	else
+	{
+		node = insert_end(heap, data);
+	}
+
+	heap->size += 1;
+	return (node);
+}
