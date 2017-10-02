@@ -1,6 +1,5 @@
 #include "heap.h"
 
-
 static _Bool *seek_position(unsigned int n, unsigned short *size)
 {
 	unsigned int i = 0, bufsize = 0, x = 1, j;
@@ -24,4 +23,36 @@ static _Bool *seek_position(unsigned int n, unsigned short *size)
 		bits[i] = buf[j];
 	}
 	return (bits);
+}
+
+static
+binary_tree_node_t *insert_end(heap_t *heap,
+			       void *data)
+{
+	binary_tree_node_t *node, *parent;
+	_Bool *position;
+	unsigned short size = 0, i;
+	unsigned int n;
+
+	n = heap->size + 1;
+	position = seek_position(n, &size);
+	if (position == NULL)
+		return (NULL);
+
+	parent = heap->root;
+	for (i = 1; i < size; i++)
+	{
+		if (i == (size - 1))
+		{
+			node = binary_tree_node(parent, data);
+			if (position[i] == 0)
+				parent->left = node;
+			else
+				parent->right = node;
+			continue;
+		}
+		parent = (position[i] == 0) ? parent->left : parent->right;
+	}
+	free(position);
+	return (node);
 }
