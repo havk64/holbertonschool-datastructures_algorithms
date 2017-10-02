@@ -1,2 +1,3 @@
-# holbertonschool-datastructures_algorithms
+# Holbertonschool Datastructures and Algorithms
+
 Holberton School Data Structures and Algorithms Assignments
