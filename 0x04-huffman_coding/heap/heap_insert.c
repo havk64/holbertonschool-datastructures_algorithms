@@ -1,7 +1,7 @@
 #include "heap.h"
 
 
-_Bool *seek_position(unsigned int n)
+static _Bool *seek_position(unsigned int n, unsigned short *size)
 {
 	unsigned int i = 0, bufsize = 0, x = 1, j;
 	static _Bool buf[16];
@@ -18,6 +18,7 @@ _Bool *seek_position(unsigned int n)
 	if (bits == NULL)
 		return (NULL);
 
+	*size = bufsize;
 	for (i = 0, j = (bufsize - 1); i < bufsize; i++, j--)
 	{
 		bits[i] = buf[j];
