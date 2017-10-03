@@ -92,6 +92,36 @@ void copy_attr(binary_tree_node_t *node, binary_tree_node_t *parent)
 	parent->parent = node;
 }
 
+void swap(heap_t *heap, binary_tree_node_t **tree)
+{
+	binary_tree_node_t *node, *parent;
+
+	node = *tree;
+	parent = node->parent;
+	if (parent == NULL)
+		return;
+
+	if (*(int *)parent->data >= *(int *)node->data)
+	{
+		if (parent->parent == NULL)
+		{
+			node->parent =  NULL;
+			heap->root = node;
+		}
+		else
+		{
+			if (parent->parent->left == parent)
+				parent->parent->left = node;
+			else
+				parent->parent->right = node;
+		}
+		copy_attr(node, parent);
+	}
+	else
+		return;
+	swap(heap, &node);
+}
+
  * heap_insert - inserts a value in a Min Binary Heap
  * @heap: a pointer to a binary heap
  * @data: the data to be inserted
