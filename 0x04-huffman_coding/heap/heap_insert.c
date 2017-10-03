@@ -116,7 +116,6 @@ static void swap(heap_t *heap, binary_tree_node_t **tree)
 	{
 		if (parent->parent == NULL)
 		{
-			node->parent =  NULL;
 			heap->root = node;
 		}
 		else
