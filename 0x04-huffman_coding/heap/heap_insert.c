@@ -74,7 +74,7 @@ static binary_tree_node_t *insert_end(heap_t *heap, void *data)
  * @parent: a pointer to a binary tree node (parent)
  * Return: Always void.
  */
-void copy_attr(binary_tree_node_t *node, binary_tree_node_t *parent)
+static void copy_attr(binary_tree_node_t *node, binary_tree_node_t *parent)
 {
 	binary_tree_node_t tmp;
 
