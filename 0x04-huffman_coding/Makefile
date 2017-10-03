@@ -3,7 +3,7 @@ CFLAGS	:= -g -Wall -Wextra -Werror -pedantic
 T0OBJS	:= $(addprefix heap/, 0-main.o heap_create.o)
 T1OBJS	:= $(addprefix heap/, 1-main.o binary_tree_node.o)
 T2OBJS	:= $(addprefix heap/, 2-main.o heap_insert.o binary_tree_node.o \
-	   heap_create.o) utils/binary_tree_print.o
+	   heap_create.o heap_delete.o) utils/binary_tree_print.o
 T0	:= heap_create
 T1	:= binary_tree_node
 T2	:= heap_insert
