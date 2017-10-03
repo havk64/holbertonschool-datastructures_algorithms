@@ -103,7 +103,7 @@ void copy_attr(binary_tree_node_t *node, binary_tree_node_t *parent)
  * @tree: a pointer to a node on a binary tree
  * Return: Always void.
  */
-void swap(heap_t *heap, binary_tree_node_t **tree)
+static void swap(heap_t *heap, binary_tree_node_t **tree)
 {
 	binary_tree_node_t *node, *parent;
 
