@@ -126,10 +126,9 @@ static void swap(heap_t *heap, binary_tree_node_t **tree)
 				parent->parent->right = node;
 		}
 		copy_attr(node, parent);
+		update_childs(heap->root);
+		swap(heap, &node);
 	}
-	else
-		return;
-	swap(heap, &node);
 }
 
 /**
