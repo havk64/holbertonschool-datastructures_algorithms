@@ -68,6 +68,13 @@ static binary_tree_node_t *insert_end(heap_t *heap, void *data)
 	return (node);
 }
 
+/**
+ * heap_insert - inserts a value in a Min Binary Heap
+ * @heap: a pointer to a binary heap
+ * @data: the data to be inserted
+ * Return: On success, a pointer to the node that was inserted or
+ * NULL on failure
+ */
 binary_tree_node_t *heap_insert(heap_t *heap, void *data)
 {
 	binary_tree_node_t *node;
