@@ -25,9 +25,7 @@ static _Bool *seek_position(unsigned int n, unsigned short *size)
 	return (bits);
 }
 
-static
-binary_tree_node_t *insert_end(heap_t *heap,
-			       void *data)
+static binary_tree_node_t *insert_end(heap_t *heap, void *data)
 {
 	binary_tree_node_t *node, *parent;
 	_Bool *position;
