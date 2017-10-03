@@ -69,6 +69,29 @@ static binary_tree_node_t *insert_end(heap_t *heap, void *data)
 }
 
 /**
+void copy_attr(binary_tree_node_t *node, binary_tree_node_t *parent)
+{
+	binary_tree_node_t tmp;
+
+	tmp = *node;
+	if (parent->right == node)
+	{
+		node->right = parent;
+		node->left = parent->left;
+		parent->right = tmp.right;
+		parent->left = tmp.left;
+	}
+	else
+	{
+		node->left = parent;
+		node->right = parent->right;
+		parent->right = tmp.right;
+		parent->left = tmp.left;
+	}
+	node->parent = parent->parent;
+	parent->parent = node;
+}
+
  * heap_insert - inserts a value in a Min Binary Heap
  * @heap: a pointer to a binary heap
  * @data: the data to be inserted
