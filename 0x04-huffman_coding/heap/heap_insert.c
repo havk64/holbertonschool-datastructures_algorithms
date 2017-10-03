@@ -157,6 +157,7 @@ binary_tree_node_t *heap_insert(heap_t *heap, void *data)
 	else
 	{
 		node = insert_end(heap, data);
+		swap(heap, &node);
 	}
 
 	heap->size += 1;
