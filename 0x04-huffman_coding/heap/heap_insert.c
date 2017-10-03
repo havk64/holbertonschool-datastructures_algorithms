@@ -31,6 +31,13 @@ static _Bool *seek_position(unsigned int n, unsigned short *size)
 	return (bits);
 }
 
+/**
+ * insert_end - inserts a node at the end of a binary heap
+ * @heap: a pointer to a binary heap
+ * @data: the data to be inserted in the binary heap
+ * Return: On success, the pointer to the node that was inserted or
+ * NULL on failure
+ */
 static binary_tree_node_t *insert_end(heap_t *heap, void *data)
 {
 	binary_tree_node_t *node, *parent;
