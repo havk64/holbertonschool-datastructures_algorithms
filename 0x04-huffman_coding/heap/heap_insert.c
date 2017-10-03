@@ -97,6 +97,21 @@ static void copy_attr(binary_tree_node_t *node, binary_tree_node_t *parent)
 	parent->parent = node;
 }
 
+void update_childs(binary_tree_node_t *node)
+{
+	if (node->left != NULL)
+	{
+		node->left->parent = node;
+		update_childs(node->left);
+	}
+
+	if (node->right != NULL)
+	{
+		node->right->parent = node;
+		update_childs(node->right);
+	}
+}
+
 /**
  * swap - swaps a child with its parent when parent > child
  * @heap: a pointer to a heap structure
