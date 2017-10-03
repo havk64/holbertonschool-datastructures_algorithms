@@ -97,6 +97,11 @@ static void copy_attr(binary_tree_node_t *node, binary_tree_node_t *parent)
 	parent->parent = node;
 }
 
+/**
+ * update_childs - update childs with the address of its parents
+ * @node: a pointer to the top of the binary tree
+ * Return: Always void.
+ */
 void update_childs(binary_tree_node_t *node)
 {
 	if (node->left != NULL)
