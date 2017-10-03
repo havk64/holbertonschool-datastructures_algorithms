@@ -133,6 +133,7 @@ void swap(heap_t *heap, binary_tree_node_t **tree)
 	swap(heap, &node);
 }
 
+/**
  * heap_insert - inserts a value in a Min Binary Heap
  * @heap: a pointer to a binary heap
  * @data: the data to be inserted
