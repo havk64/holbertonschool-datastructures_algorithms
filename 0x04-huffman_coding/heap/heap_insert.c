@@ -83,16 +83,14 @@ static void copy_attr(binary_tree_node_t *node, binary_tree_node_t *parent)
 	{
 		node->right = parent;
 		node->left = parent->left;
-		parent->right = tmp.right;
-		parent->left = tmp.left;
 	}
 	else
 	{
 		node->left = parent;
 		node->right = parent->right;
-		parent->right = tmp.right;
-		parent->left = tmp.left;
 	}
+	parent->right = tmp.right;
+	parent->left = tmp.left;
 	node->parent = parent->parent;
 	parent->parent = node;
 }
