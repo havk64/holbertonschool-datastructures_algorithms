@@ -118,12 +118,12 @@ void update_childs(binary_tree_node_t *node)
 }
 
 /**
- * swap - swaps a child with its parent when parent > child
+ * percolate_up - swaps a child with its parent when parent > child
  * @heap: a pointer to a heap structure
  * @tree: a pointer to a node on a binary tree
  * Return: Always void.
  */
-static void swap(heap_t *heap, binary_tree_node_t **tree)
+static void percolate_up(heap_t *heap, binary_tree_node_t **tree)
 {
 	binary_tree_node_t *node, *parent;
 
@@ -147,7 +147,7 @@ static void swap(heap_t *heap, binary_tree_node_t **tree)
 		}
 		copy_attr(node, parent);
 		update_childs(heap->root);
-		swap(heap, &node);
+		percolate_up(heap, &node);
 	}
 }
 
@@ -176,7 +176,7 @@ binary_tree_node_t *heap_insert(heap_t *heap, void *data)
 	else
 	{
 		node = insert_end(heap, data);
-		swap(heap, &node);
+		percolate_up(heap, &node);
 	}
 
 	heap->size += 1;
