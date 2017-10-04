@@ -1,6 +1,7 @@
 #ifndef HEAP_H
 #define HEAP_H
 #include <stdlib.h>
+#define VALUE(x) (*(int *)x->data)
 
 /**
  * struct binary_tree_node_s - Binary tree node data structure
