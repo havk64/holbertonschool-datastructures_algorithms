@@ -132,7 +132,7 @@ static void percolate_up(heap_t *heap, binary_tree_node_t **tree)
 	if (parent == NULL)
 		return;
 
-	if (VALUE(parent) >= VALUE(node))
+	if (heap->data_cmp(parent->data, node->data) > 0)
 	{
 		if (parent->parent == NULL)
 		{
