@@ -1,37 +1,6 @@
 #include "heap.h"
 
 /**
- * seek_position - find the place to insert a node at the end of a binary heap
- * @n: the size of the binary heap
- * @size: a pointer to a variable to be used to insert the node
- * Return: On success, an array of _Bool objects. On failure, NULL
- */
-_Bool *seek_position(unsigned int n, unsigned short *size)
-{
-	unsigned int i = 0, bufsize = 0, x = 1, j;
-	static _Bool buf[16];
-	_Bool *bits;
-
-	while (n > (x - 1))
-	{
-		buf[bufsize] = (n & x) != 0;
-		x <<= 1;
-		bufsize++;
-	}
-
-	bits = malloc(sizeof(_Bool) * bufsize);
-	if (bits == NULL)
-		return (NULL);
-
-	*size = bufsize;
-	for (i = 0, j = (bufsize - 1); i < bufsize; i++, j--)
-	{
-		bits[i] = buf[j];
-	}
-	return (bits);
-}
-
-/**
  * insert_end - inserts a node at the end of a binary heap
  * @heap: a pointer to a binary heap
  * @data: the data to be inserted in the binary heap
@@ -41,30 +10,35 @@ _Bool *seek_position(unsigned int n, unsigned short *size)
 static binary_tree_node_t *insert_end(heap_t *heap, void *data)
 {
 	binary_tree_node_t *node, *parent;
-	_Bool *position;
-	unsigned short size = 0, i;
-	unsigned int n;
+	unsigned short size = 0;
+	unsigned int n, x = 1;
+	int j;
+	_Bool buf[32];
 
 	n = heap->size + 1;
-	position = seek_position(n, &size);
-	if (position == NULL)
-		return (NULL);
+	/* Get the binary representation of the binary tree's size. */
+	while (n > (x - 1))
+	{
+		buf[size++] = (n & x) != 0;
+		x <<= 1;
+	}
 
 	parent = heap->root;
-	for (i = 1; i < size; i++)
+	/* Invert the binary representation of the binary tree's size */
+	/* and cuts the first bit (size - 2). */
+	for (j = (size - 2); j >= 0; j--)
 	{
-		if (i == (size - 1))
+		if (j == 0)
 		{
 			node = binary_tree_node(parent, data);
-			if (position[i] == 0)
+			if (buf[j] == 0)
 				parent->left = node;
 			else
 				parent->right = node;
 			continue;
 		}
-		parent = (position[i] == 0) ? parent->left : parent->right;
+		parent = (buf[j] == 0) ? parent->left : parent->right;
 	}
-	free(position);
 	return (node);
 }
 
