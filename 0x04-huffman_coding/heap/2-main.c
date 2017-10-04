@@ -37,6 +37,11 @@ int print_int(char *buffer, void *data)
 	return (length);
 }
 
+/**
+ * free_data - deallocate a binary heap
+ * @tree: a pointer to a binary tree
+ * Return: Always void
+ */
 void free_data(void *tree)
 {
 	binary_tree_node_t *node;
