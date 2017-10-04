@@ -117,24 +117,24 @@ static void percolate_up(heap_t *heap, binary_tree_node_t **tree)
 
 	node = *tree;
 	parent = node->parent;
-	if (parent == NULL)
-		return;
-
-	if (heap->data_cmp(parent->data, node->data) > 0)
+	if (parent)
 	{
-		if (parent->parent == NULL)
+		if (heap->data_cmp(parent->data, node->data) > 0)
 		{
-			heap->root = node;
-		}
-		else
-		{
-			if (parent->parent->left == parent)
-				parent->parent->left = node;
+			if (parent->parent == NULL)
+			{
+				heap->root = node;
+			}
 			else
-				parent->parent->right = node;
+			{
+				if (parent->parent->left == parent)
+					parent->parent->left = node;
+				else
+					parent->parent->right = node;
+			}
+			copy_attr(node, parent);
+			percolate_up(heap, &node);
 		}
-		copy_attr(node, parent);
-		percolate_up(heap, &node);
 	}
 }
 
