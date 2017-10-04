@@ -78,41 +78,31 @@ static void copy_attr(binary_tree_node_t *node, binary_tree_node_t *parent)
 {
 	binary_tree_node_t tmp;
 
-	tmp = *node;
-	if (parent->right == node)
+	/* Swap parent/node, except member data */
+	tmp = *parent;
+	*parent = *node;
+	parent->data = tmp.data;
+	tmp.data = node->data;
+	*node = tmp;
+	/* Update right/left reference and child parents */
+	parent->parent = node;
+	if (node->left == node)
 	{
-		node->right = parent;
-		node->left = parent->left;
+		node->left = parent;
+		if (node->right != NULL)
+			node->right->parent = node;
 	}
 	else
 	{
-		node->left = parent;
-		node->right = parent->right;
+		node->right = parent;
+		if (node->left != NULL)
+			node->left->parent = node;
 	}
-	parent->right = tmp.right;
-	parent->left = tmp.left;
-	node->parent = parent->parent;
-	parent->parent = node;
-}
-
-/**
- * update_childs - update childs with the address of its parents
- * @node: a pointer to the top of the binary tree
- * Return: Always void.
- */
-void update_childs(binary_tree_node_t *node)
-{
-	if (node->left != NULL)
-	{
-		node->left->parent = node;
-		update_childs(node->left);
-	}
-
-	if (node->right != NULL)
-	{
-		node->right->parent = node;
-		update_childs(node->right);
-	}
+	/* Update parent childs */
+	if (parent->right != NULL)
+		parent->right->parent = parent;
+	if (parent->left != NULL)
+		parent->left->parent = parent;
 }
 
 /**
@@ -144,7 +134,6 @@ static void percolate_up(heap_t *heap, binary_tree_node_t **tree)
 				parent->parent->right = node;
 		}
 		copy_attr(node, parent);
-		update_childs(heap->root);
 		percolate_up(heap, &node);
 	}
 }
