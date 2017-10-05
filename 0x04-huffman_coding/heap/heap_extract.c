@@ -85,6 +85,11 @@ static binary_tree_node_t *swap_firstlast(binary_tree_node_t *last,
 	return (first);
 }
 
+/**
+ * heap_extract - extract the first element of a Min binary heap
+ * @heap: a pointer to the binary heap
+ * Return: a void pointer to the data member of the top node
+ */
 void *heap_extract(heap_t *heap)
 {
 	binary_tree_node_t *first, *last;
