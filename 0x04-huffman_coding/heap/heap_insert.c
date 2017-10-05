@@ -43,43 +43,6 @@ static binary_tree_node_t *insert_end(heap_t *heap, void *data)
 }
 
 /**
- * copy_attr - copy the attributes of a binary tree node updating child/parents
- * @node: a pointer to a binary tree node (child)
- * @parent: a pointer to a binary tree node (parent)
- * Return: Always void.
- */
-static void copy_attr(binary_tree_node_t *node, binary_tree_node_t *parent)
-{
-	binary_tree_node_t tmp;
-
-	/* Swap parent/node, except member data */
-	tmp = *parent;
-	*parent = *node;
-	parent->data = tmp.data;
-	tmp.data = node->data;
-	*node = tmp;
-	/* Update right/left reference and child parents */
-	parent->parent = node;
-	if (node->left == node)
-	{
-		node->left = parent;
-		if (node->right != NULL)
-			node->right->parent = node;
-	}
-	else
-	{
-		node->right = parent;
-		if (node->left != NULL)
-			node->left->parent = node;
-	}
-	/* Update parent childs */
-	if (parent->right != NULL)
-		parent->right->parent = parent;
-	if (parent->left != NULL)
-		parent->left->parent = parent;
-}
-
-/**
  * percolate_up - swaps a child with its parent when parent > child
  * @heap: a pointer to a heap structure
  * @tree: a pointer to a node on a binary tree
@@ -95,20 +58,13 @@ static void percolate_up(heap_t *heap, binary_tree_node_t **tree)
 	{
 		if (heap->data_cmp(parent->data, node->data) > 0)
 		{
-			if (parent->parent == NULL)
-			{
-				heap->root = node;
-			}
-			else
-			{
-				if (parent->parent->left == parent)
-					parent->parent->left = node;
-				else
-					parent->parent->right = node;
-			}
-			copy_attr(node, parent);
-			percolate_up(heap, &node);
+			void *tmp;
+
+			tmp = parent->data;
+			parent->data = node->data;
+			node->data = tmp;
 		}
+		percolate_up(heap, &parent);
 	}
 }
 
