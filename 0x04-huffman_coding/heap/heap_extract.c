@@ -1,5 +1,11 @@
 #include "heap.h"
 
+/**
+ * swap - swap two data member pointers
+ * @parent: a pointer to a parent node
+ * @child: a pointer to a child node
+ * Return: Always void
+ */
 static void swap(binary_tree_node_t *parent, binary_tree_node_t *child)
 {
 	void *tmp;
