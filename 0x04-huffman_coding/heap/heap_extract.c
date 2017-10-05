@@ -60,6 +60,9 @@ void *heap_extract(heap_t *heap)
 	unsigned short size = 0, i;
 	void *extracted;
 
+	if (heap == NULL || heap->root == NULL)
+		return (NULL);
+
 	node = heap->root;
 	extracted = (void *)node->data;
 	position = seek_position(heap->size, &size);
