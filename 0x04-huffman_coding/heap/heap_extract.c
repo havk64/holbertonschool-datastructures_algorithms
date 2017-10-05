@@ -15,6 +15,12 @@ static void swap(binary_tree_node_t *parent, binary_tree_node_t *child)
 	child->data = tmp;
 }
 
+/**
+ * percolate_down - swap the data of a child with its parent
+ * @heap: a pointer to a binary heap
+ * @node: a pointer to a node on a binary tree
+ * Return: Always void
+ */
 static void percolate_down(heap_t *heap, binary_tree_node_t *node)
 {
 	binary_tree_node_t *left, *right;
