@@ -33,15 +33,16 @@ static _Bool *seek_position(unsigned int n, unsigned short *size)
 static binary_tree_node_t *swap_firstlast(binary_tree_node_t *last,
 					  binary_tree_node_t *first)
 {
+	binary_tree_node_t tmp;
+
+	tmp = *first;
+	tmp.data = last->data;
 	if (last->parent->right == last)
 		last->parent->right = NULL;
 	else
 		last->parent->left = NULL;
 
-	last->left = first->left;
-	last->right = first->right;
-	last->parent = first->parent; /* or NULL */
-	first->left->parent =  first->right->parent = last;
+	*last = tmp;
 	free(first);
 	return (last);
 }
