@@ -1,76 +1,107 @@
 #include "heap.h"
 
-/**
- * seek_position - find the place to insert a node at the end of a binary heap
- * @n: the size of the binary heap
- * @size: a pointer to a variable to be used to insert the node
- * Return: On success, an array of _Bool objects. On failure, NULL
- */
-static _Bool *seek_position(unsigned int n, unsigned short *size)
+static void swap(binary_tree_node_t *parent, binary_tree_node_t *child)
 {
-	unsigned int i = 0, bufsize = 0, x = 1, j;
-	_Bool buf[32], *bits;
+	void *tmp;
 
-	while (n > (x - 1))
+	tmp = parent->data;
+	parent->data = child->data;
+	child->data = tmp;
+}
+
+static void percolate_down(heap_t *heap, binary_tree_node_t *node)
+{
+	binary_tree_node_t *left, *right;
+	int ldiff, rdiff;
+
+	left = node->left;
+	right = node->right;
+
+	if (right != NULL && left != NULL)
 	{
-		buf[bufsize] = (n & x) != 0;
-		x <<= 1;
-		bufsize++;
+		ldiff = heap->data_cmp(node->data, left->data);
+		rdiff = heap->data_cmp(node->data, right->data);
+		if (ldiff > rdiff)
+		{
+			if (ldiff > 0)
+			{
+				swap(node, left);
+				percolate_down(heap, left);
+			}
+		}
+		else
+		{
+			if (rdiff > 0)
+			{
+				swap(node, right);
+				percolate_down(heap, right);
+			}
+		}
 	}
 
-	bits = malloc(sizeof(_Bool) * bufsize);
-	if (bits == NULL)
-		return (NULL);
-
-	*size = bufsize;
-	for (i = 0, j = (bufsize - 1); i < bufsize; i++, j--)
+	if (right != NULL)
 	{
-		bits[i] = buf[j];
+		if (heap->data_cmp(node->data, right->data) > 0)
+		{
+			swap(node, right);
+			percolate_down(heap, right);
+		}
 	}
-	return (bits);
+	if (left != NULL)
+	{
+		if (heap->data_cmp(node->data, left->data) > 0)
+		{
+			swap(node, left);
+			percolate_down(heap, left);
+		}
+	}
 }
 
 static binary_tree_node_t *swap_firstlast(binary_tree_node_t *last,
 					  binary_tree_node_t *first)
 {
-	binary_tree_node_t tmp;
+	void *tmp;
 
-	tmp = *first;
-	tmp.data = last->data;
+	tmp = first->data;
+	first->data = last->data;
+	last->data = tmp;
 	if (last->parent->right == last)
 		last->parent->right = NULL;
 	else
 		last->parent->left = NULL;
-
-	*last = tmp;
-	if (first->left != NULL)
-		first->left->parent =  last;
-
-	if (first->right != NULL)
-		first->right->parent = last;
-
-	free(first);
-	return (last);
+	free(last);
+	return (first);
 }
 
 void *heap_extract(heap_t *heap)
 {
-	binary_tree_node_t *node;
-	_Bool *position;
-	unsigned short size = 0, i;
+	binary_tree_node_t *first, *last;
+	unsigned short size = 0;
+	unsigned int n, x = 1;
+	int j;
+	_Bool buf[32];
 	void *extracted;
 
 	if (heap == NULL || heap->root == NULL)
 		return (NULL);
 
-	node = heap->root;
-	extracted = (void *)node->data;
-	position = seek_position(heap->size, &size);
-	for (i = 1; i < size; i++)
-		node = (position[i] != 0) ? node->right : node->left;
+	first = heap->root;
+	extracted = (void *)first->data;
+	/* Get the binary representation of the binary tree's size. */
+	n = heap->size;
+	while (n > (x - 1))
+	{
+		buf[size++] = (n & x) != 0;
+		x <<= 1;
+	}
+	/* Invert the binary representation of the binary tree's size */
+	/* and cuts the first bit (size - 2). */
+	last = heap->root;
+	for (j = (size - 2); j >= 0; j--)
+		last = (buf[j] != 0) ? last->right : last->left;
 
-	heap->root = swap_firstlast(node, heap->root);
+	heap->root = swap_firstlast(last, first);
+	percolate_down(heap, heap->root);
 	heap->size -= 1;
-	free(position);
 	return (extracted);
 }
