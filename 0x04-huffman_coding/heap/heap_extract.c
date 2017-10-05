@@ -86,7 +86,7 @@ void *heap_extract(heap_t *heap)
 		return (NULL);
 
 	first = heap->root;
-	extracted = (void *)first->data;
+	extracted = first->data;
 	/* Get the binary representation of the binary tree's size. */
 	n = heap->size;
 	while (n > (x - 1))
