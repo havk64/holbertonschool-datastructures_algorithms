@@ -63,6 +63,12 @@ static void percolate_down(heap_t *heap, binary_tree_node_t *node)
 		}
 }
 
+/**
+ * swap_firstlast - swap the first and last nodes of a binary tree
+ * @last: the last inserted element in the binary tree
+ * @first: the first (top) element in a binary tree
+ * Return: a pointer to the top of the binary tree
+ */
 static binary_tree_node_t *swap_firstlast(binary_tree_node_t *last,
 					  binary_tree_node_t *first)
 {
