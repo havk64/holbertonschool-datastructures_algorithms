@@ -39,14 +39,13 @@ static void percolate_down(heap_t *heap, binary_tree_node_t *node)
 				swap(node, left);
 				percolate_down(heap, left);
 			}
-		} else
-		{
+		}
+		else
 			if (rdiff > 0)
 			{
 				swap(node, right);
 				percolate_down(heap, right);
 			}
-		}
 	}
 	if (right != NULL)
 		if (heap->data_cmp(node->data, right->data) > 0)
