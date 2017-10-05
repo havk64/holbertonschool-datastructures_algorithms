@@ -16,7 +16,6 @@ static void percolate_down(heap_t *heap, binary_tree_node_t *node)
 
 	left = node->left;
 	right = node->right;
-
 	if (right != NULL && left != NULL)
 	{
 		ldiff = heap->data_cmp(node->data, left->data);
@@ -28,8 +27,7 @@ static void percolate_down(heap_t *heap, binary_tree_node_t *node)
 				swap(node, left);
 				percolate_down(heap, left);
 			}
-		}
-		else
+		} else
 		{
 			if (rdiff > 0)
 			{
@@ -38,23 +36,19 @@ static void percolate_down(heap_t *heap, binary_tree_node_t *node)
 			}
 		}
 	}
-
 	if (right != NULL)
-	{
 		if (heap->data_cmp(node->data, right->data) > 0)
 		{
 			swap(node, right);
 			percolate_down(heap, right);
 		}
-	}
+
 	if (left != NULL)
-	{
 		if (heap->data_cmp(node->data, left->data) > 0)
 		{
 			swap(node, left);
 			percolate_down(heap, left);
 		}
-	}
 }
 
 static binary_tree_node_t *swap_firstlast(binary_tree_node_t *last,
