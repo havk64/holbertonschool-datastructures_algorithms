@@ -43,6 +43,12 @@ static binary_tree_node_t *swap_firstlast(binary_tree_node_t *last,
 		last->parent->left = NULL;
 
 	*last = tmp;
+	if (first->left != NULL)
+		first->left->parent =  last;
+
+	if (first->right != NULL)
+		first->right->parent = last;
+
 	free(first);
 	return (last);
 }
