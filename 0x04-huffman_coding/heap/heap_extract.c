@@ -76,7 +76,7 @@ static binary_tree_node_t *swap_firstlast(binary_tree_node_t *last,
 void *heap_extract(heap_t *heap)
 {
 	binary_tree_node_t *first, *last;
-	unsigned short size = 0;
+	unsigned short bsize = 0;
 	unsigned int n, x = 1;
 	int j;
 	_Bool buf[32];
@@ -91,13 +91,13 @@ void *heap_extract(heap_t *heap)
 	n = heap->size;
 	while (n > (x - 1))
 	{
-		buf[size++] = (n & x) != 0;
+		buf[bsize++] = (n & x) != 0;
 		x <<= 1;
 	}
 	/* Invert the binary representation of the binary tree's size */
 	/* and cuts the first bit (size - 2). */
 	last = heap->root;
-	for (j = (size - 2); j >= 0; j--)
+	for (j = (bsize - 2); j >= 0; j--)
 		last = (buf[j] != 0) ? last->right : last->left;
 
 	heap->root = swap_firstlast(last, first);
