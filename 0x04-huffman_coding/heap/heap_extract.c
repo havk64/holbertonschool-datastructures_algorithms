@@ -89,19 +89,22 @@ void *heap_extract(heap_t *heap)
 	extracted = first->data;
 	/* Get the binary representation of the binary tree's size. */
 	n = heap->size;
-	while (n > (x - 1))
+	if (n > 1)
 	{
-		buf[bsize++] = (n & x) != 0;
-		x <<= 1;
-	}
-	/* Invert the binary representation of the binary tree's size */
-	/* and cuts the first bit (size - 2). */
-	last = heap->root;
-	for (j = (bsize - 2); j >= 0; j--)
-		last = (buf[j] != 0) ? last->right : last->left;
+		while (n > (x - 1))
+		{
+			buf[bsize++] = (n & x) != 0;
+			x <<= 1;
+		}
+		/* Invert the binary representation of the binary tree's size */
+		/* and cuts the first bit (size - 2). */
+		last = heap->root;
+		for (j = (bsize - 2); j >= 0; j--)
+			last = (buf[j] != 0) ? last->right : last->left;
 
-	heap->root = swap_firstlast(last, first);
-	percolate_down(heap, heap->root);
+		heap->root = swap_firstlast(last, first);
+		percolate_down(heap, heap->root);
+	}
 	heap->size -= 1;
 	return (extracted);
 }
