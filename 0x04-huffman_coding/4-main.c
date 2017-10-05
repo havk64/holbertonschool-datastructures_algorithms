@@ -37,6 +37,25 @@ int print_int(char *buffer, void *data)
 	return (length);
 }
 
+/**
+ * free_data - deallocate a binary heap
+ * @tree: a pointer to a binary tree
+ * Return: Always void
+ */
+void free_data(void *tree)
+{
+	binary_tree_node_t *node;
+
+	node = (binary_tree_node_t *)tree;
+	if (node->left != NULL)
+		free_data(node->left);
+
+	if (node->right != NULL)
+		free_data(node->right);
+
+	free(node);
+}
+
 void binary_tree_print(const binary_tree_node_t *heap, int (*print_data)
 		       (char *, void *));
 
@@ -76,6 +95,6 @@ int main(void)
 		printf("\n");
 	}
 	printf("Heap size: %lu\n", heap->size);
-	heap_delete(heap, NULL);
+	heap_delete(heap, free_data);
 	return (EXIT_SUCCESS);
 }
