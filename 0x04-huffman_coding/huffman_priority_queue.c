@@ -19,6 +19,14 @@ int data_cmp_sym(void *first, void *second)
 	return ((int)(data1->freq - data2->freq));
 }
 
+/**
+ * huffman_priority_queue - creates a huffman priority queue
+ * @data: a pointer to an array of characters
+ * @freq: a pointer to an array of numbers representing the character
+ * occurence frequency
+ * @size: the size (length) of the queue
+ * Return: a pointer to the newly created binary heap/priority queue
+ */
 heap_t *huffman_priority_queue(char *data, size_t *freq, size_t size)
 {
 	heap_t *heap;
