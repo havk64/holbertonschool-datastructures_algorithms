@@ -1,6 +1,5 @@
 #include "huffman.h"
 #include "heap.h"
-#include <stdio.h>
 
 int data_cmp_sym(void *first, void *second)
 {
@@ -26,7 +25,13 @@ heap_t *huffman_priority_queue(char *data, size_t *freq, size_t size)
 	for (i = 0; i < size; i++)
 	{
 		symbol = symbol_create(data[i], freq[i]);
+		if (symbol == NULL)
+			return (NULL);
+
 		nested = binary_tree_node(NULL, symbol);
+		if (nested == NULL)
+			return (NULL);
+
 		node = heap_insert(heap, nested);
 		if (node == NULL)
 			return (NULL);
