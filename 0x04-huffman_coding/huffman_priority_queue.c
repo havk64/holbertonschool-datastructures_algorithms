@@ -1,6 +1,12 @@
 #include "huffman.h"
 #include "heap.h"
 
+/**
+ * data_cmp_sym - a function to compare the value of two nodes
+ * @first: a pointer to a node
+ * @second: a pointer to another node
+ * Return: the differente between the data of two nodes
+ */
 int data_cmp_sym(void *first, void *second)
 {
 	binary_tree_node_t *nested1, *nested2;
