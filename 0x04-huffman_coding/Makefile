@@ -8,11 +8,13 @@ T3OBJS	:= 3-main.o $(addprefix heap/, heap_insert.o binary_tree_node.o \
 	   heap_create.o heap_delete.o heap_extract.o) utils/binary_tree_print.o
 T4OBJS	:= 4-main.o $(addprefix heap/, heap_insert.o binary_tree_node.o \
 	   heap_create.o heap_delete.o) utils/binary_tree_print.o
+T5OBJS	:= 5-main.o symbol.o
 T0	:= heap_create
 T1	:= binary_tree_node
 T2	:= heap_insert
 T3	:= heap_extract
 T4	:= heap_delete
+T5	:= symbol_create
 
 .PHONY	: all clean cleanall
 
@@ -31,6 +33,9 @@ $(T3)	: $(T3OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
 
 $(T4)	: $(T4OBJS)
+	$(CC) $(CFLAGS) -o $@ $^
+
+$(T5)	: $(T5OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
 
 clean:
