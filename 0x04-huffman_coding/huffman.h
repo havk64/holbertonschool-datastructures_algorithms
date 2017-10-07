@@ -2,6 +2,7 @@
 #define HUFFMAN_H
 #include <stdlib.h>
 #include "heap.h"
+#define SYMBOL_T(node) ((symbol_t *)((binary_tree_node_t *)node)->data)
 /**
  * struct symbol_s - Stores a char and its associated frequency
  *

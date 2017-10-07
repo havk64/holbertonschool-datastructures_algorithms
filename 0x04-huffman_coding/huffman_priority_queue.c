@@ -11,8 +11,8 @@ int data_cmp_sym(void *first, void *second)
 {
 	symbol_t *data1, *data2;
 
-	data1 = (symbol_t *)((binary_tree_node_t *)first)->data;
-	data2 = (symbol_t *)((binary_tree_node_t *)second)->data;
+	data1 = SYMBOL_T(first);
+	data2 = SYMBOL_T(second);
 	return ((int)(data1->freq - data2->freq));
 }
 
