@@ -9,13 +9,10 @@
  */
 int data_cmp_sym(void *first, void *second)
 {
-	binary_tree_node_t *nested1, *nested2;
 	symbol_t *data1, *data2;
 
-	nested1 = (binary_tree_node_t *)first;
-	nested2 = (binary_tree_node_t *)second;
-	data1 = (symbol_t *)nested1->data;
-	data2 = (symbol_t *)nested2->data;
+	data1 = (symbol_t *)((binary_tree_node_t *)first)->data;
+	data2 = (symbol_t *)((binary_tree_node_t *)second)->data;
 	return ((int)(data1->freq - data2->freq));
 }
 
