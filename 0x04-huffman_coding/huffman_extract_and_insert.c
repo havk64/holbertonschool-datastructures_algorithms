@@ -12,6 +12,9 @@ int huffman_extract_and_insert(heap_t *priority_queue)
 	symbol_t *symbol;
 	size_t sum;
 
+	if (priority_queue == NULL || priority_queue->root == NULL)
+		return (EXIT_FAILURE);
+
 	first = heap_extract(priority_queue);
 	if (first == NULL)
 		return (EXIT_FAILURE);
