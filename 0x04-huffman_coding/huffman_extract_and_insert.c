@@ -1,6 +1,11 @@
 #include "huffman.h"
 #include "heap.h"
 
+/**
+ * huffman_extract_and_insert - extracts 2 first nested nodes
+ * @priority_queue: a pointer to a binary heap
+ * Return: On success, 0. On Failure, 1.
+ */
 int huffman_extract_and_insert(heap_t *priority_queue)
 {
 	binary_tree_node_t *first, *second, *node, *nested;
