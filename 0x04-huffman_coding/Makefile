@@ -12,10 +12,11 @@ T5	:= symbol_create
 T6	:= priority_queue
 T7	:= extract
 T8	:= huffman_tree
+T9	:= huffman_codes
 
 .PHONY	: all clean cleanall
 
-all	: $(T0) $(T1) $(T2) $(T3) $(T4) $(T5) $(T6) $(T7) $(T8)
+all	: $(T0) $(T1) $(T2) $(T3) $(T4) $(T5) $(T6) $(T7) $(T8) $(T9)
 
 $(T0)	: 0-main.o $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
@@ -44,8 +45,11 @@ $(T7)	: 7-main.o $(OBJS)
 $(T8)	: 8-main.o $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
 
+$(T9)	: 9-main.o huffman_codes.o $(OBJS)
+	$(CC) $(CFLAGS) -o $@ $^
+
 clean:
 	$(RM) $(OBJS)
 
 cleanall: clean
-	$(RM) $(T0) $(T1) $(T2) $(T3) $(T4) $(T5) $(T6) $(T7) $(T8)
+	$(RM) $(T0) $(T1) $(T2) $(T3) $(T4) $(T5) $(T6) $(T7) $(T8) $(T9)
