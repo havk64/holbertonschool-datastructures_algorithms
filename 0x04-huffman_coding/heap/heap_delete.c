@@ -1,6 +1,11 @@
 #include "heap.h"
 
 /**
+ * free_node - recursive function to free a binary tree node
+ * @node: a pointer to binary tree node
+ * @free_data: a pointer to a function to deallocate nodes
+ * Return: always void.
+ */
 static void free_node(binary_tree_node_t *node, void (*free_data)(void *))
 {
 	if (node->left)
