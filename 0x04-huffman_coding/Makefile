@@ -1,24 +1,8 @@
 CC	:= gcc
 CFLAGS	:= -g -Wall -Wextra -Werror -pedantic -Iheap/
-T0OBJS	:= 0-main.o heap/heap_create.o
-T1OBJS	:= 1-main.o heap/binary_tree_node.o
-T2OBJS	:= 2-main.o $(addprefix heap/, heap_insert.o binary_tree_node.o \
-	   heap_create.o heap_delete.o) utils/binary_tree_print.o
-T3OBJS	:= 3-main.o $(addprefix heap/, heap_insert.o binary_tree_node.o \
-	   heap_create.o heap_delete.o heap_extract.o) utils/binary_tree_print.o
-T4OBJS	:= 4-main.o $(addprefix heap/, heap_insert.o binary_tree_node.o \
-	   heap_create.o heap_delete.o) utils/binary_tree_print.o
-T5OBJS	:= 5-main.o symbol.o
-T6OBJS	:= 6-main.o huffman_priority_queue.o symbol.o $(addprefix heap/, \
-	   heap_insert.o binary_tree_node.o heap_create.o heap_delete.o) \
-	   utils/binary_tree_print.o
-T7OBJS	:= 7-main.o huffman_extract_and_insert.o huffman_priority_queue.o \
+OBJS	:= huffman_tree.o huffman_extract_and_insert.o huffman_priority_queue.o \
 	   symbol.o $(addprefix heap/, heap_insert.o binary_tree_node.o \
 	   heap_create.o heap_delete.o heap_extract.o) utils/binary_tree_print.o
-T8OBJS	:= 8-main.o huffman_tree.o huffman_extract_and_insert.o \
-	   huffman_priority_queue.o symbol.o $(addprefix heap/, heap_insert.o \
-	   binary_tree_node.o heap_create.o heap_delete.o heap_extract.o) \
-	   utils/binary_tree_print.o
 T0	:= heap_create
 T1	:= binary_tree_node
 T2	:= heap_insert
@@ -33,36 +17,35 @@ T8	:= huffman_tree
 
 all	: $(T0) $(T1) $(T2) $(T3) $(T4) $(T5) $(T6) $(T7) $(T8)
 
-$(T0)	: $(T0OBJS)
+$(T0)	: 0-main.o $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
 
-$(T1)	: $(T1OBJS)
+$(T1)	: 1-main.o $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
 
-$(T2)	: $(T2OBJS)
+$(T2)	: 2-main.o $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
 
-$(T3)	: $(T3OBJS)
+$(T3)	: 3-main.o $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
 
-$(T4)	: $(T4OBJS)
+$(T4)	: 4-main.o $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
 
-$(T5)	: $(T5OBJS)
+$(T5)	: 5-main.o $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
 
-$(T6)	: $(T6OBJS)
+$(T6)	: 6-main.o $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
 
-$(T7)	: $(T7OBJS)
+$(T7)	: 7-main.o $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
 
-$(T8)	: $(T8OBJS)
+$(T8)	: 8-main.o $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
 
 clean:
-	$(RM) $(T0OBJS) $(T1OBJS) $(T2OBJS) $(T3OBJS) $(T4OBJS) $(T5OBJS) \
-	$(T6OBJS) $(T7OBJS) $(T8OBJS)
+	$(RM) $(OBJS)
 
 cleanall: clean
 	$(RM) $(T0) $(T1) $(T2) $(T3) $(T4) $(T5) $(T6) $(T7) $(T8)
