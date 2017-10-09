@@ -36,6 +36,7 @@ static binary_tree_node_t *insert_last(heap_t *priority_queue)
 	return (nested);
 }
 
+/**
  * huffman_tree - Creates a complete huffman coding tree
  * @data: a pointer to an ASCII character
  * @freq: the frequency of occurence of related character
