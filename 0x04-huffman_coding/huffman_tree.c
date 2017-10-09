@@ -1,6 +1,41 @@
 #include "huffman.h"
 
 /**
+static binary_tree_node_t *insert_last(heap_t *priority_queue)
+{
+
+	binary_tree_node_t *first, *second, *nested;
+	symbol_t *symbol;
+	size_t sum;
+
+	first = heap_extract(priority_queue);
+	if (first == NULL)
+		return (NULL);
+
+	if (priority_queue->size > 0)
+	{
+		second = heap_extract(priority_queue);
+	}
+
+	sum = SYMBOL_T(first)->freq;
+	sum += (second) ? SYMBOL_T(second)->freq : 0;
+	symbol = symbol_create(-1, sum);
+	if (symbol == NULL)
+		return (NULL);
+
+	nested = binary_tree_node(NULL, symbol);
+	if (nested == NULL)
+		return (NULL);
+
+	nested->left = first;
+	nested->right = second;
+	first->parent = nested;
+	if (second)
+		second->parent = nested;
+
+	return (nested);
+}
+
  * huffman_tree - Creates a complete huffman coding tree
  * @data: a pointer to an ASCII character
  * @freq: the frequency of occurence of related character
