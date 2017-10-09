@@ -1,6 +1,16 @@
 #include "heap.h"
 
 /**
+static void free_node(binary_tree_node_t *node, void (*free_data)(void *))
+{
+	if (node->left)
+		free_node(node->left, free_data);
+
+	if (node->right)
+		free_node(node->right, free_data);
+}
+
+/**
  * heap_delete - deallocate a entire heap structure
  * @heap: a pointer to a heap structure
  * @free_data: a pointer to a function to free/deallocate the structure
@@ -8,12 +18,10 @@
  */
 void heap_delete(heap_t *heap, void (*free_data)(void *))
 {
-	binary_tree_node_t *node;
-
-	if (free_data == NULL)
+	if (heap == NULL || heap->root == NULL || free_data == NULL)
 		return;
 
-	node = heap->root;
-	free_data(node);
+	free_node(heap->root, free_data);
+	free_data(heap->root);
 	free(heap);
 }
