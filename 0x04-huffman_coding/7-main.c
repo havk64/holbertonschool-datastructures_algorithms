@@ -38,7 +38,7 @@ int nested_print(char *buffer, void *data)
 int main(void)
 {
 	heap_t *priority_queue;
-	size_t i;
+	size_t x;
 	char data[] = {
 		'a', 'b', 'c', 'd', 'e', 'f'
 	};
@@ -56,12 +56,19 @@ int main(void)
 	binary_tree_print(priority_queue->root, nested_print);
 	printf("\n");
 
-	for (i = 0; i < size; i++)
+	while (priority_queue->size > 1)
 	{
-		huffman_extract_and_insert(priority_queue);
+		x = huffman_extract_and_insert(priority_queue);
 		binary_tree_print(priority_queue->root, nested_print);
+		printf("x: %lu, size: %lu\n", x, priority_queue->size);
 		printf("\n");
+		if (x == 1)
+			break;
 	}
+	x = huffman_extract_and_insert(priority_queue);
+	binary_tree_print(priority_queue->root, nested_print);
+	printf("x: %lu, size: %lu\n", x, priority_queue->size);
+	printf("\n");
 
 	return (EXIT_SUCCESS);
 }
