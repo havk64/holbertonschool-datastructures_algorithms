@@ -1,6 +1,10 @@
 #include "huffman.h"
 
 /**
+ * insert_last - insert the last node on the Huffman tree
+ * @priority_queue: a pointer to a priority_queue structure
+ * Return: the root node of the Huffman tree or NULL on failure
+ */
 static binary_tree_node_t *insert_last(heap_t *priority_queue)
 {
 
