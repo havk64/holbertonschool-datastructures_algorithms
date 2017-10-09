@@ -11,6 +11,7 @@ int huffman_extract_and_insert(heap_t *priority_queue)
 	binary_tree_node_t *first, *second, *node, *nested;
 	symbol_t *symbol;
 	size_t sum;
+	int status = EXIT_SUCCESS;
 
 	if (priority_queue == NULL || priority_queue->root == NULL)
 		return (EXIT_FAILURE);
@@ -19,9 +20,12 @@ int huffman_extract_and_insert(heap_t *priority_queue)
 	if (first == NULL)
 		return (EXIT_FAILURE);
 
-	second = heap_extract(priority_queue);
-	if (second == NULL)
-		return (EXIT_FAILURE);
+	if (priority_queue->size > 0)
+	{
+		second = heap_extract(priority_queue);
+		if (priority_queue->size == 1)
+			status = EXIT_FAILURE;
+	}
 
 	sum = SYMBOL_T(first)->freq + SYMBOL_T(second)->freq;
 	symbol = symbol_create(-1, sum);
@@ -40,5 +44,5 @@ int huffman_extract_and_insert(heap_t *priority_queue)
 	if (node == NULL)
 		return (EXIT_FAILURE);
 
-	return (EXIT_SUCCESS);
+	return (status);
 }
