@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include "heap.h"
 #define SYMBOL_T(node) ((symbol_t *)((binary_tree_node_t *)node)->data)
+#define GET_LETTER(node) (((symbol_t *) node->data)->data)
 /**
  * struct symbol_s - Stores a char and its associated frequency
  *
