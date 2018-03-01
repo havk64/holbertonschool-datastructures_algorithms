@@ -63,4 +63,5 @@ typedef struct graph_s
 	size_t      nb_vertices;
 	vertex_t    *vertices;
 } graph_t;
+graph_t *graph_create(void);
 #endif /* GRAPHS_H */
