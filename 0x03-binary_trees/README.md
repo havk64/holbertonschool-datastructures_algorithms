@@ -337,3 +337,33 @@ checks if a binary tree is full
         Is 98 full: 0
         Is 12 full: 1
         Is 128 full: 0
+
+### 16. Is Perfect
+
+The [16-binary_tree_is_perfect.c](16-binary_tree_is_perfect.c) file has a function that
+checks if a binary tree is perfect
+
+- Prototype: `int binary_tree_is_perfect(const binary_tree_t *tree);`
+- Where `tree` is a pointer to the root node of the tree to check
+- If tree is NULL, it returns 0
+
+        $ make
+
+		./16-perfect 
+               .-------(098)-------.
+          .--(012)--.         .--(128)--.
+        (010)     (054)     (010)     (402)
+        Perfect: 1
+        
+               .-------(098)-------.
+          .--(012)--.         .--(128)-------.
+        (010)     (054)     (010)       .--(402)
+                                      (010)
+        Perfect: 0
+        
+               .-------(098)-------.
+          .--(012)--.         .--(128)-------.
+        (010)     (054)     (010)       .--(402)--.
+                                      (010)     (010)
+        Perfect: 0
+
