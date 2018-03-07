@@ -367,3 +367,25 @@ checks if a binary tree is perfect
                                       (010)     (010)
         Perfect: 0
 
+### 17. Sibling
+
+The [17-binary_tree_sibling.c](17-binary_tree_sibling.c) has a function that
+finds the sibling of a node
+
+- Prototype: `binary_tree_t *binary_tree_sibling(binary_tree_t *node);`
+- Where `node` is a pointer to the node to find the sibling of
+- It returns a pointer to the sibling node
+- If node has no sibling, it returns NULL
+
+        $ make
+
+		$ ./17-sibling
+               .-------(098)-------.
+          .--(012)--.         .--(128)-------.
+        (010)     (054)     (110)       .--(402)--.
+                                      (200)     (512)
+        Sibling of 12: 128
+        Sibling of 110: 402
+        Sibling of 54: 10
+        Sibling of 98: (nil)
+
