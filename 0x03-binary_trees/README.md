@@ -389,3 +389,24 @@ finds the sibling of a node
         Sibling of 54: 10
         Sibling of 98: (nil)
 
+### 18. Uncle
+
+The [18-binary_tree_uncle.c](18-binary_tree_uncle.c) file has a function that
+finds the uncle of a node
+
+- Prototype: `binary_tree_t *binary_tree_uncle(binary_tree_t *node);`
+- Where `node` is a pointer to the node to find the uncle of
+- It returns a pointer to the uncle node
+- If node has no uncle, it returns NULL
+
+        $ make
+		
+		$ ./18-uncle
+               .-------(098)-------.
+          .--(012)--.         .--(128)-------.
+        (010)     (054)     (110)       .--(402)--.
+                                      (200)     (512)
+        Uncle of 110: 12
+        Uncle of 54: 128
+        Uncle of 12: (nil)
+
