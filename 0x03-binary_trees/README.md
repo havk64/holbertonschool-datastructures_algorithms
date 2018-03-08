@@ -410,3 +410,24 @@ finds the uncle of a node
         Uncle of 54: 128
         Uncle of 12: (nil)
 
+### 19. Lowest common ancestor 
+
+The [100-binary_trees_ancestor.c](100-binary_trees_ancestor.c) file has a function that
+finds the lowest common ancestor of two nodes
+
+- Prototype: `binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tree_t *second);`
+- Where `first` is a pointer to the first node and `second` is a pointer to the second node
+- It returns a pointer to the lowest common ancestor node of the two given nodes
+- If no common ancestor is found, it returns NULL
+
+        $ make
+
+		$ ./100-ancestor
+               .-------(098)-------.
+          .--(012)--.         .--(402)-------.
+        (010)     (054)     (045)       .--(128)--.
+                                      (092)     (065)
+        Ancestor of [12] & [402]: 98
+        Ancestor of [45] & [65]: 402
+        Ancestor of [128] & [65]: 128
+
