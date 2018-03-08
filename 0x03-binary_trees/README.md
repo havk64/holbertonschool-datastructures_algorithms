@@ -431,3 +431,13 @@ finds the lowest common ancestor of two nodes
         Ancestor of [45] & [65]: 402
         Ancestor of [128] & [65]: 128
 
+### 20. Level-order traversal
+
+The [Level-order traversal](Level-order traversal) file that has a function that
+goes through a binary tree using level-order traversal
+
+- Prototype: `void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));`
+- Where `tree` is a pointer to the root node of the tree to traverse and `func`
+is a pointer to a function to call for each node.
+- The value in the node is passed as a parameter to this function.
+
