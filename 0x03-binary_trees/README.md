@@ -441,3 +441,35 @@ goes through a binary tree using level-order traversal
 is a pointer to a function to call for each node.
 - The value in the node is passed as a parameter to this function.
 
+### 21. Is Complete
+
+The [102-binary_tree_is_complete.c](102-binary_tree_is_complete.c) file that has a function that
+checks if a binary tree is complete
+
+- Prototype: `int binary_tree_is_complete(const binary_tree_t *tree);`
+- Where `tree` is a pointer to the root node of the tree to check
+- If tree is `NULL`, it returns 0
+
+        $ make
+
+		./102-complete
+               .-------(098)--.
+          .--(012)--.       (128)--.
+        (010)     (054)          (402)
+        Is 98 complete: 0
+        Is 12 complete: 1
+               .-------(098)-------.
+          .--(012)--.         .--(128)--.
+        (010)     (054)     (112)     (402)
+        Is 98 complete: 1
+                    .-------(098)-------.
+               .--(012)--.         .--(128)--.
+          .--(010)     (054)     (112)     (402)
+        (008)
+        Is 98 complete: 1
+                    .------------(098)-------.
+               .--(012)-------.         .--(128)--.
+          .--(010)       .--(054)     (112)     (402)
+        (008)          (023)
+        Is 98 complete: 0
+
