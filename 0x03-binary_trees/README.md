@@ -473,3 +473,30 @@ checks if a binary tree is complete
         (008)          (023)
         Is 98 complete: 0
 
+### 22. Rotate left 
+
+The [103-binary_tree_rotate_left.c](103-binary_tree_rotate_left.c) file has a function that
+performs a left-rotation on a binary tree
+
+- Prototype: `binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree);`
+- Where `tree` is a pointer to the root node of the tree to rotate
+- It returns a pointer to the new root node of the tree once rotated
+
+        $ make
+
+		$ ./103-rotl
+        (098)--.
+             (128)--.
+                  (402)
+        Rotate-left 98
+          .--(128)--.
+        (098)     (402)
+        
+          .--(128)-------.
+        (098)       .--(402)--.
+                  (420)     (450)
+        Rotate-left 128
+               .-------(402)--.
+          .--(128)--.       (450)
+        (098)     (420)
+
