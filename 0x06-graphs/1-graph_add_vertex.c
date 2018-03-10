@@ -8,8 +8,8 @@ vertex_t *graph_add_vertex(graph_t *graph, const char *str)
 	if (graph->nb_vertices != 0)
 	{
 		/* Check if str already is in other vertex and exit if so */
+		return (NULL);
 	}
-
 	/* Case where graph is empty */
 	vertex = malloc(sizeof(vertex_t));
 	if (vertex == NULL)
@@ -25,5 +25,7 @@ vertex_t *graph_add_vertex(graph_t *graph, const char *str)
 	vertex->edges = NULL;
 
 	/* TODO - insert vertix to graph and update nb_vertices */
+	graph->vertices = vertex;
+	graph->nb_vertices = 1;
 	return (vertex);
 }
