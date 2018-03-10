@@ -500,3 +500,31 @@ performs a left-rotation on a binary tree
           .--(128)--.       (450)
         (098)     (420)
 
+### 23. Rotate right
+
+The [104-binary_tree_rotate_right.c](104-binary_tree_rotate_right.c) file has a function that
+performs a right-rotation on a binary tree
+
+- Prototype: `binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);`
+- Where `tree` is a pointer to the root node of the tree to rotate
+- It returns a pointer to the new root node of the tree once rotated
+
+
+        $ make
+
+		$ ./104-rotr
+               .--(098)
+          .--(064)
+        (032)
+        Rotate-right 98
+          .--(064)--.
+        (032)     (098)
+        
+               .-------(064)--.
+          .--(032)--.       (098)
+        (020)     (056)
+        Rotate-right 64
+          .--(032)-------.
+        (020)       .--(064)--.
+                  (056)     (098)
+
