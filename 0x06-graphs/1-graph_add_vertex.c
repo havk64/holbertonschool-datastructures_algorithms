@@ -42,15 +42,18 @@ vertex_t *graph_add_vertex(graph_t *graph, const char *str)
 	{
 		node = graph->vertices;
 		/* Check if str already is in other vertex and exit if so */
-		do {
+		for (index = 1;; index++)
+		{
 
 			if (strcmp(str, node->content) == 0)
 				return (NULL);
 
-			index++;
 			if (!node->next)
 				break;
-		} while ((node = node->next));
+
+			node = node->next;
+		}
+
 		vertex = allocate_vertex(str, index);
 		if (!vertex)
 			return (NULL);
