@@ -22,6 +22,14 @@ inline vertex_t *allocate_vertex(const char *str, size_t index)
 	return (vertex);
 }
 
+/**
+ * graph_add_vertex - add a vertex to an existing graph
+ * @graph: the pointer to the graph
+ * @str: the pointer to the content string
+ *
+ * Return: On success, a pointer to the recently created vertex
+ * On failure, it returns NULL.
+ */
 vertex_t *graph_add_vertex(graph_t *graph, const char *str)
 {
 	vertex_t *vertex, *node;
