@@ -26,25 +26,34 @@ vertex_t *graph_add_vertex(graph_t *graph, const char *str)
 	vertex_t *vertex, *node;
 	size_t index = 0;
 
-	node = graph->vertices;
-	/* Check if str already is in other vertex and exit if so */
-	for (index = 0;; index++)
+	if (!graph->vertices)
 	{
-
-		if (strcmp(str, node->content) == 0)
+		vertex = allocate_vertex(str, index);
+		if (!vertex)
 			return (NULL);
 
-		node = node->next;
-	}
-	/* Case where graph is empty */
-	vertex = allocate_vertex(str, index);
-
-	/* TODO - insert vertex to graph and update nb_vertices */
-	if (!graph->vertices)
 		graph->vertices = vertex;
+		vertex->next = NULL;
+	}
 	else
-		node->next = vertex;
+	{
+		node = graph->vertices;
+		/* Check if str already is in other vertex and exit if so */
+		do {
 
+			if (strcmp(str, node->content) == 0)
+				return (NULL);
+
+			index++;
+			if (!node->next)
+				break;
+		} while ((node = node->next));
+		vertex = allocate_vertex(str, index);
+		if (!vertex)
+			return (NULL);
+
+		node->next = vertex;
+	}
 	graph->nb_vertices += 1;
 	return (vertex);
 }
