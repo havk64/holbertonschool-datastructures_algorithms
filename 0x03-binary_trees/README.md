@@ -558,3 +558,32 @@ Properties of a Binary Search Tree:
         (010)     (054)     (097)     (402)
         Is 98 bst: 0
 
+### 25. BST - Insert 
+
+The [111-bst_insert.c](111-bst_insert.c) file has a function that
+inserts a value in a Binary Search Tree
+
+- Prototype: bst_t *bst_insert(bst_t **tree, int value);
+- Where `tree` is a double pointer to the root node of the BST to insert the value
+in and `value` is the value to store in the node to be inserted
+- It returns a pointer to the created node, or NULL on failure
+- If the address stored in tree is NULL, the created node becomes the root node.
+- If the value is already present in the tree, it is ignored
+
+        $ make
+
+		$ ./111-bst_insert
+        Inserted: 98
+        Inserted: 402
+        Inserted: 12
+        Inserted: 46
+        Inserted: 128
+        Inserted: 256
+        Inserted: 512
+        Inserted: 1
+        Node should be nil -> (nil)
+               .-------(098)------------.
+          .--(012)--.         .-------(402)--.
+        (001)     (046)     (128)--.       (512)
+                                 (256)
+
