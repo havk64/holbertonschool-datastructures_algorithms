@@ -24,7 +24,6 @@ inline vertex_t *allocate_vertex(const char *str, size_t index)
 vertex_t *graph_add_vertex(graph_t *graph, const char *str)
 {
 	vertex_t *vertex, *node;
-	char *content;
 	size_t index = 0;
 
 	node = graph->vertices;
