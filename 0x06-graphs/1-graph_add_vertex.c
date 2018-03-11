@@ -16,6 +16,7 @@ inline vertex_t *allocate_vertex(const char *str, size_t index)
 	strcpy(content, str);
 	vertex->content = content;
 	vertex->index = index;
+	vertex->next = NULL;
 	vertex->nb_edges = 0;
 	vertex->edges = NULL;
 	return (vertex);
@@ -36,7 +37,6 @@ vertex_t *graph_add_vertex(graph_t *graph, const char *str)
 			return (NULL);
 
 		graph->vertices = vertex;
-		vertex->next = NULL;
 	}
 	else
 	{
