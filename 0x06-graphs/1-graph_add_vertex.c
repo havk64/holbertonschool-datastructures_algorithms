@@ -2,7 +2,7 @@
 
 inline vertex_t *allocate_vertex(const char *str, size_t index)
 {
-	vertex_t *vertex = NULL;
+	vertex_t *vertex;
 	char *content;
 
 	vertex = malloc(sizeof(vertex_t));
