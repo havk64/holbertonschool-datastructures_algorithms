@@ -1,5 +1,12 @@
 #include "graphs.h"
 
+/**
+ * allocate_vertex - allocates a vertex struct
+ * @str: the pointer to the content string
+ * @index: the index to be assigned to the allocated vertex
+ * Return: On success, a pointer to the recently created vertex
+ * On failure, it returns NULL.
+ */
 inline vertex_t *allocate_vertex(const char *str, size_t index)
 {
 	vertex_t *vertex;
