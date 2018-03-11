@@ -41,7 +41,6 @@ vertex_t *graph_add_vertex(graph_t *graph, const char *str)
 	else
 	{
 		node = graph->vertices;
-		/* Check if str already is in other vertex and exit if so */
 		for (index = 1;; index++)
 		{
 
