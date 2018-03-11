@@ -29,3 +29,22 @@ vertex_t *graph_add_vertex(graph_t *graph, const char *str)
 	graph->nb_vertices = 1;
 	return (vertex);
 }
+
+vertex_t *allocate_vertex(const char *str, size_t index)
+{
+	vertex_t *vertex = NULL;
+	char *content;
+
+	vertex = malloc(sizeof(vertex_t));
+	if (vertex == NULL)
+		return (NULL);
+
+	content = malloc(strlen(str));
+	if (content == NULL)
+		return (NULL);
+
+	strcpy(content, str);
+	vertex->content = content;
+	vertex->index = index;
+	return (vertex);
+}
