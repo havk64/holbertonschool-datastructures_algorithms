@@ -26,6 +26,9 @@ vertex_t *graph_add_vertex(graph_t *graph, const char *str)
 	vertex_t *vertex, *node;
 	size_t index = 0;
 
+	if (!graph || !str)
+		return (NULL);
+
 	if (!graph->vertices)
 	{
 		vertex = allocate_vertex(str, index);
