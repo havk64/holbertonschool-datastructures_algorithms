@@ -9,7 +9,7 @@ inline vertex_t *allocate_vertex(const char *str, size_t index)
 	if (vertex == NULL)
 		return (NULL);
 
-	content = malloc(strlen(str));
+	content = malloc(strlen(str) + 1);
 	if (content == NULL)
 		return (NULL);
 
