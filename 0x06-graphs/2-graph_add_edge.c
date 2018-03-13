@@ -24,6 +24,15 @@ inline int add_edge(vertex_t *src, vertex_t *dest)
 	return (EXIT_SUCCESS);
 }
 
+/**
+ * graph_add_edge - adds an edge between two vertices to an existing graph
+ * @graph: a pointer to a graph data structure
+ * @src: the string to match the content of the source vertex
+ * @dest: the string to match the content of the destination vertex
+ * @type: the type of the edge (Unidirectional/Bidirectional)
+ *
+ * Return: On success, 1. On failure, 0
+ */
 int graph_add_edge(graph_t *graph, const char *src, const char *dest,
 		   edge_type_t type)
 {
