@@ -1,5 +1,10 @@
 #include "graphs.h"
 
+/**
+ * graph_delete - deallocates/deletes a graph structure
+ * @graph: a pointer to a graph data structure
+ * Return: Always void
+ */
 void graph_delete(graph_t *graph)
 {
 	edge_t *edge, *ecurrent;
