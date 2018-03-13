@@ -1,7 +1,6 @@
 #include "graphs.h"
 
-inline
-int add_edge(vertex_t *src, vertex_t *dest)
+inline int add_edge(vertex_t *src, vertex_t *dest)
 {
 	edge_t *edge, *head;
 
