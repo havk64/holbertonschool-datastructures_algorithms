@@ -25,23 +25,6 @@ int add_edge(vertex_t *src, vertex_t *dest)
 	return (EXIT_SUCCESS);
 }
 
-
-inline
-int add_edge_bi(vertex_t *src, vertex_t *dest)
-{
-	int status;
-
-	status = add_edge(src, dest);
-	if (status != 0)
-		return (EXIT_FAILURE);
-
-	status = add_edge(dest, src);
-	if (status != 0)
-		return (EXIT_FAILURE);
-
-	return (EXIT_SUCCESS);
-}
-
 int graph_add_edge(graph_t *graph, const char *src, const char *dest,
 		   edge_type_t type)
 {
@@ -68,7 +51,11 @@ int graph_add_edge(graph_t *graph, const char *src, const char *dest,
 
 	if (type)
 	{
-		status = add_edge_bi(esrc, edest);
+		status = add_edge(esrc, edest);
+		if (status != 0)
+			return (0);
+
+		status = add_edge(edest, esrc);
 		if (status != 0)
 			return (0);
 	}
