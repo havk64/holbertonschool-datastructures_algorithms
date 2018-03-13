@@ -1,5 +1,11 @@
 #include "graphs.h"
 
+/**
+ * add_edge - auxiliary function to add an edge between two vertices
+ * @src: a pointer to the source vertex
+ * @dest: a pointer to the destination vertex
+ * Return: On success, EXIT_SUCCESS. On failure, EXIT_FAILURE
+ */
 inline int add_edge(vertex_t *src, vertex_t *dest)
 {
 	edge_t *edge, *head;
