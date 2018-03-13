@@ -24,7 +24,7 @@ int add_edge(vertex_t *src, vertex_t *dest)
 
 	head = src->edges;
 	if (head == NULL)
-		head = edge;
+		src->edges = edge;
 	else
 	{
 		while (head->next != NULL)
