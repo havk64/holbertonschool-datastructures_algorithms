@@ -60,7 +60,7 @@ int graph_add_edge(graph_t *graph, const char *src, const char *dest,
 
 	esrc = edest = NULL;
 	if (!graph || !graph->vertices || !src || !dest)
-		return (EXIT_FAILURE);
+		return (0);
 
 	head = graph->vertices;
 	while (head != NULL)
@@ -74,19 +74,19 @@ int graph_add_edge(graph_t *graph, const char *src, const char *dest,
 		head = head->next;
 	}
 	if (!esrc || !edest)
-		return (EXIT_FAILURE);
+		return (0);
 
 	if (type)
 	{
 		status = add_edge_bi(esrc, edest);
 		if (status != 0)
-			return (EXIT_FAILURE);
+			return (0);
 	}
 	else
 	{
 		status = add_edge(esrc, edest);
 		if (status != 0)
-			return (EXIT_FAILURE);
+			return (0);
 	}
-	return (EXIT_SUCCESS);
+	return (1);
 }
