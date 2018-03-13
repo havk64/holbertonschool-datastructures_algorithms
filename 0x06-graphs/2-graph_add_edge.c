@@ -1,26 +1,16 @@
 #include "graphs.h"
 
-inline edge_t *allocate_edge(vertex_t *dest)
-{
-	edge_t *edge;
-
-	edge = malloc(sizeof(edge_t));
-	if (edge == NULL)
-		return (NULL);
-
-	edge->dest = dest;
-	edge->next = NULL;
-	return (edge);
-}
-
 inline
 int add_edge(vertex_t *src, vertex_t *dest)
 {
 	edge_t *edge, *head;
 
-	edge = allocate_edge(dest);
+	edge = malloc(sizeof(edge_t));
 	if (edge == NULL)
 		return (EXIT_FAILURE);
+
+	edge->dest = dest;
+	edge->next = NULL;
 
 	head = src->edges;
 	if (head == NULL)
