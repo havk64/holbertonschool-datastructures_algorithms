@@ -6,7 +6,7 @@ T2	= 2-graph_add_edge
 T3	= 3-graph_delete
 T4	= 4-depth_first_traverse
 
-.PHONE	: all
+.PHONE	: all clean re
 
 all: $(T0) $(T1) $(T2) $(T3) $(T4)
 
@@ -28,3 +28,8 @@ $(T3): 3-main.o 0-graph_create.o 1-graph_add_vertex.o 2-graph_add_edge.o \
 $(T4): 4-main.o 0-graph_create.o 1-graph_add_vertex.o 2-graph_add_edge.o \
 3-graph_delete.o 4-depth_first_traverse.o graph_display.o
 	$(CC) $(CFLAGS) -o $@ $^
+
+clean:
+	$(RM) *.o
+
+re: clean all
