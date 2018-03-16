@@ -607,3 +607,27 @@ builds a Binary Search Tree from an array
           .--(002)--.         .--(032)--.       (062)                           .--(098)
         (001)     (020)     (022)     (034)
 
+### 27. BST - Search 
+
+The [113-bst_search.c](113-bst_search.c) file has a function that
+removes a node from a Binary Search Tree
+
+- Prototype: bst_t *bst_search(const bst_t *tree, int value);
+- Where `tree` is a pointer to the root node of the BST to search
+and `value` is the value to look for
+- It returns a pointer to the node containing a value equals to `value`
+- If `tree` is NULL or if nothing is found, it returns NULL
+
+        $ make
+
+		$ ./113-bst_search 
+                                             .------------(079)-------.
+                         .-----------------(047)-------.         .--(087)--.
+               .-------(021)-------.              .--(068)     (084)     (091)-------.
+          .--(002)--.         .--(032)--.       (062)                           .--(098)
+        (001)     (020)     (022)     (034)                                   (095)
+        Found: 32
+          .--(032)--.
+        (022)     (034)
+        Node should be nil -> (nil)
+
