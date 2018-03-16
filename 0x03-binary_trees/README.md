@@ -587,3 +587,23 @@ in and `value` is the value to store in the node to be inserted
         (001)     (046)     (128)--.       (512)
                                  (256)
 
+### 26. BST - Array to BST 
+
+The [112-array_to_bst.c](112-array_to_bst.c) file has a function that
+builds a Binary Search Tree from an array
+
+- Prototype: bst_t *array_to_bst(int *array, size_t size);
+- Where `array` is a pointer to the first element of the array to be converted and
+`size` is the number of element in the array
+- it returns a pointer to the root node of the created BST, or NULL on failure
+- If a value of the array is already present in the tree, this value is ignored
+
+        $ make
+
+		$ ./112-bst_array
+                                             .------------(079)-------.
+                         .-----------------(047)-------.         .--(087)--.
+               .-------(021)-------.              .--(068)     (084)     (091)-------.
+          .--(002)--.         .--(032)--.       (062)                           .--(098)
+        (001)     (020)     (022)     (034)
+
