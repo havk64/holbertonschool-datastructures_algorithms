@@ -631,3 +631,58 @@ and `value` is the value to look for
         (022)     (034)
         Node should be nil -> (nil)
 
+### 28. BST - Remove
+
+The [114-bst_remove.c](114-bst_remove.c) file has a function that
+removes a node from a Binary Search Tree
+
+- Prototype: `bst_t *bst_remove(bst_t *root, int value);`
+- Where `root` is a pointer to the root node of the tree to remove a node of
+and `value` is the value to look for
+- Once located, the node containing a value equals to value is removed and freed
+- If the node to be deleted has two children, it is replaced with its first
+in-order successor (not predecessor)
+- It returns a pointer to the new root node of the tree after removing the
+desired value
+
+        $ make
+
+		$ ./114-bst_rm
+        ==14720== Memcheck, a memory error detector
+        ==14720== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+        ==14720== Using Valgrind-3.10.1 and LibVEX; rerun with -h for copyright info
+        ==14720== Command: ./114-bst_rm
+        ==14720==
+                                             .------------(079)-------.
+                         .-----------------(047)-------.         .--(087)--.
+               .-------(021)-------.              .--(068)     (084)     (091)-------.
+          .--(002)--.         .--(032)--.       (062)                           .--(098)
+        (001)     (020)     (022)     (034)                                   (095)
+        Removed 79...
+                                             .------------(084)--.
+                         .-----------------(047)-------.       (087)--.
+               .-------(021)-------.              .--(068)          (091)-------.
+          .--(002)--.         .--(032)--.       (062)                      .--(098)
+        (001)     (020)     (022)     (034)                              (095)
+        Removed 21...
+                                        .------------(084)--.
+                         .------------(047)-------.       (087)--.
+               .-------(022)--.              .--(068)          (091)-------.
+          .--(002)--.       (032)--.       (062)                      .--(098)
+        (001)     (020)          (034)                              (095)
+        Removed 68...
+                                        .-------(084)--.
+                         .------------(047)--.       (087)--.
+               .-------(022)--.            (062)          (091)-------.
+          .--(002)--.       (032)--.                             .--(098)
+        (001)     (020)          (034)                         (095)
+        ==14720==
+        ==14720== HEAP SUMMARY:
+        ==14720==     in use at exit: 0 bytes in 0 blocks
+        ==14720==   total heap usage: 40 allocs, 40 frees, 5,772 bytes allocated
+        ==14720==
+        ==14720== All heap blocks were freed -- no leaks are possible
+        ==14720==
+        ==14720== For counts of detected and suppressed errors, rerun with: -v
+        ==14720== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
