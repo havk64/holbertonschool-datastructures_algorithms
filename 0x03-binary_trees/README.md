@@ -686,3 +686,13 @@ desired value
         ==14720== For counts of detected and suppressed errors, rerun with: -v
         ==14720== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 
+### 29. Big O #BST 
+
+The [115-O](115-O) file has the answer to the question:
+
+> What are the average time complexities of those operations on a Binary Search Tree (one answer per line):
+
+- Inserting the value n
+- Removing the node with the value n
+- Searching for a node in a BST of size n
+
