@@ -696,3 +696,43 @@ The [115-O](115-O) file has the answer to the question:
 - Removing the node with the value n
 - Searching for a node in a BST of size n
 
+### 30. AVL
+
+The [120-binary_tree_is_avl.c](120-binary_tree_is_avl.c) file has a function that
+checks if a binary tree is a valid [AVL Tree](https://en.wikipedia.org/wiki/AVL_tree)
+
+- Prototype: `int binary_tree_is_avl(const binary_tree_t *tree);`
+- Where `tree` is a pointer to the root node of the tree to check
+- It returns 1 if tree is a valid `AVL Tree`, and 0 otherwise
+- If tree is NULL, it returns 0
+
+Properties of an `AVL Tree`:
+
+- An `AVL Tree` is a `BST`
+- The difference between heights of left and right subtrees cannot be more than one
+- The left and right subtree each must also be a binary search tree
+
+        $ make
+
+		$ ./120-is_avl
+               .-------(098)--.
+          .--(012)--.       (128)--.
+        (010)     (054)          (402)
+        Is 98 avl: 1
+        Is 12 avl: 1
+               .-------(098)-------.
+          .--(012)--.         .--(128)--.
+        (010)     (054)     (097)     (402)
+        Is 98 avl: 0
+               .-------(098)--.
+          .--(012)--.       (128)--.
+        (010)     (054)          (402)--.
+                                      (430)
+        Is 98 avl: 0
+               .-------(098)--.
+          .--(012)--.       (128)--.
+        (010)     (054)          (402)-------.
+                                        .--(430)
+                                      (420)
+        Is 98 avl: 0
+
