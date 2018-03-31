@@ -1,5 +1,6 @@
 #ifndef RB_TREES_H
 #define RB_TREES_H
+#include <stdlib.h>
 
 /**
  * enum rb_color_e - Possible color of a Red-Black tree
