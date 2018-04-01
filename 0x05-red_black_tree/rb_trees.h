@@ -34,5 +34,6 @@ typedef struct rb_tree_s
 } rb_tree_t;
 
 rb_tree_t *rb_tree_node(rb_tree_t *parent, int value, rb_color_t color);
+int rb_tree_is_valid(const rb_tree_t *tree);
 
 #endif /* RB_TREES_H */
